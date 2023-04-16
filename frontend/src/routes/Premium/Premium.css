@@ -1,0 +1,117 @@
+.Premium {
+    height:65vh;
+    padding-top:5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.premiumIndex {
+    
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:2.5rem;
+    color:white;   
+    margin: 0 auto;
+}
+
+.premiumText {
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+}
+
+.premiumBtns {
+    display: flex;
+    flex-direction: row;
+    gap:1.2rem;
+}
+
+.premiumIndex h1{
+    font-family: Montserrat-VariableFont_wght;
+    font-weight: 600;
+    font-size: 2.5rem;
+    line-height: 2.9rem;
+}
+
+.premiumIndex h2{
+    font-family: Montserrat-VariableFont_wght_2;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+}
+
+.premiumIndex button {
+    border-radius: 15px;
+}
+
+.premiumContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:4rem;
+    margin-bottom:3rem;
+    
+}
+
+.premiumHeading {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.premiumHeading h1 {
+    font-family: Montserrat-VariableFont_wght;
+    font-weight: 600;
+    font-size: 2.5rem;
+    color: black;
+    line-height: 3.5rem;
+}
+
+
+table {
+    border-spacing: 0;
+    border-collapse: separate;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+th {
+     border-radius: 10px 10px 0 0;
+}
+
+.premiumContent th {
+    text-align: center;
+    font-family: Montserrat-VariableFont_wght_2;
+}
+
+.premiumContent li {
+    margin: 1rem auto;
+}
+
+.premiumContent td {
+    padding-top:1.5rem ;
+    padding-bottom:1.5rem;
+    font-family: Montserrat-VariableFont_wght_3;
+    font-weight: 500;
+    line-height: 1.2rem;
+    
+}
+
+.buttonRow {
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width:650px) {
+    .table-full {
+        display: none;
+    }
+}
+
+@media only screen and (min-width:651px) {
+    .table-mobile {
+        display: none;
+    }
+}

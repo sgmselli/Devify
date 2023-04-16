@@ -1,0 +1,27 @@
+.Waiting {
+    height:80vh;
+    padding-top:5rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.WaitingDiv {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap:3rem;
+}
+
+.Waiting h1 {
+    font-family: Montserrat-VariableFont_wght;
+    font-size: 2.8rem;
+    line-height: 3.5rem;
+}
+
+.Waiting h2 {
+    font-family: Montserrat-VariableFont_wght_2;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}

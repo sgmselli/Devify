@@ -1,0 +1,46 @@
+.AdminControl {
+    display: flex;
+    gap:3rem;
+    flex-direction: column;
+}
+
+.AdminControl h1 {
+    font-family: Montserrat-VariableFont_wght;
+    font-size: 2rem;
+}
+
+.AdminControl h2 {
+    font-family: Montserrat-VariableFont_wght_2;
+    color: rgb(58, 55, 55);
+    font-size: 1.4rem;
+}
+
+.adminFreelance {
+    display: flex;
+    flex-direction: column;
+    gap:1.5rem;
+}
+
+.adminFreelance form {
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+}
+
+.tickets {
+    display:flex;
+    flex-direction: column;
+
+}
+
+.FreelanceTickets {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.TutorBookings {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}

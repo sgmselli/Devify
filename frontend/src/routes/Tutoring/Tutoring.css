@@ -1,0 +1,63 @@
+.tutorIndex {
+    background-color: 			#FEC8D8;
+    padding-top:5rem;
+    min-height:100vh;
+    display: flex;
+    justify-content: center;
+    padding:8rem 0 3rem 0;
+}
+
+.tutorIndex .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap:5rem;
+}
+
+.subjects {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin:4rem auto;
+    gap:3rem;
+}
+
+.subjectBoxes {
+    display:flex;
+    flex-wrap:wrap;
+    gap:2rem 1rem;
+}
+
+.header {
+    text-align: center;
+}
+
+.header h1 {
+    font-family:Montserrat-VariableFont_wght;
+    font-size:2.5rem;
+}
+
+.tutorContact .jumbotron{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    background-color: #B0E0E6;
+}
+
+.tutorContact form{
+    display: flex;
+    flex-direction: column;
+    gap:2.5rem;
+    max-width:40rem;
+}
+
+.tutorContact form button {
+    margin-top:3rem;
+}
+
+.tutorContact form input {
+    border-radius: 12px;
+    padding:0.5rem 1rem;
+    cursor: pointer;
+}

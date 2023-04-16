@@ -1,0 +1,59 @@
+.hireIndex {
+    min-height:100vh;
+    background-color: 			#957DAD;
+    display: flex;
+    justify-content: center;
+    padding:8rem 0 3rem 0;
+}
+
+.hireIndex .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap:5rem;
+    
+}
+
+.hireContact {
+    margin: 6.5rem auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap:2.5rem;
+    
+}
+
+.hireContact form {
+    display: flex;
+    flex-direction: column;
+    gap:2.5rem;
+}
+
+.hireContact textarea {
+    height: 20rem;
+    resize:none;
+    border:0.01rem solid black;
+}
+
+.buttonMiddle {
+    margin: 0 auto;
+}
+
+button {
+    border-radius: 18px!important;
+}
+
+.date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.date label {
+    font-family: Montserrat-VariableFont_wght_3;
+    font-size: 0.9rem;
+    font-weight: 550;
+    color: rgb(47, 50, 47);
+    line-height: 1.2rem;
+}

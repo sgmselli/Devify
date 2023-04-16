@@ -1,0 +1,491 @@
+@font-face {
+    font-family: "Montserrat-VariableFont_wght";
+    src: local("Montserrat-VariableFont_wght"), url("../../fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Montserrat-VariableFont_wght_2";
+    src: local("Montserrat-VariableFont_wght_2"), url("../../fonts/Montserrat-VariableFont_wght_2.ttf") format("truetype");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Montserrat-VariableFont_wght_3";
+    src: local("Montserrat-VariableFont_wght_2"), url("../../fonts/Montserrat-VariableFont_wght_2.ttf") format("truetype");
+
+}
+
+@keyframes new-item-animation {
+    from {
+        opacity: 0;
+}
+
+    to {
+        opacity: 1;
+    }
+}
+
+.index {
+    display: flex;
+    justify-content: center;
+    background-color: #FFBF00;
+    height: 100vh;
+
+}
+
+.index .row {
+    padding-top: 5rem;
+    display: flex;
+    align-items: center;
+
+}
+
+.indexText {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.indexText h1 {
+    font-family: Montserrat-VariableFont_wght;
+    font-weight: 600;
+    font-size: 3rem;
+    color: rgb(52, 55, 52);
+    opacity: 0;
+    animation: new-item-animation .3s linear forwards;
+}
+
+.indexText h2 {
+    width: 90%;
+    font-family: Montserrat-VariableFont_wght_2;
+    font-size: 0.9rem;
+    color: rgb(42, 45, 42);
+    line-height: 1.5rem;
+    opacity: 0;
+    animation: new-item-animation .3s linear forwards;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.buttons button {
+    border-radius: 15px;
+    width: 8rem;
+}
+
+.indexImage {
+    display: flex;
+}
+
+.indexImage img {
+    width: 100%;
+}
+
+.freelance {
+    text-align: center;
+}
+
+.freelance h1 {
+    font-family: Montserrat-VariableFont_wght;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.freelance h2 {
+    font-family: Montserrat-VariableFont_wght;
+    font-size: 0.7rem;
+}
+
+.contentLinks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5rem auto;
+}
+
+.contentLinks ul li {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.contentLinks ul li a {
+    border-right: 0.01rem solid black;
+    padding: 0.7rem 4rem;
+    font-family: Montserrat-VariableFont_wght_3;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.lastLink {
+    border-right: 0!important;
+}
+
+.content .jumbotron {
+    display: flex;
+    align-items: center;
+    min-height: 65vh;
+    gap:1rem;
+}
+
+.content .jumbotron .row {
+    padding: 1rem;
+    margin:  auto;
+    gap:1.5rem
+}
+
+.content .jumbotron h1 {
+    font-family: Montserrat-VariableFont_wght;
+    font-weight: 600;
+    font-size: 3rem;
+    color: rgb(52, 55, 52);
+    line-height: 3.5rem;
+}
+
+.content .jumbotron h2 {
+    font-family: Montserrat-VariableFont_wght_3;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+}
+
+.jumbodetails button {
+    margin: 3rem auto;
+    border-radius: 20px!important;
+    width: 10rem;
+}
+
+b {
+    transition: 0.5s;
+}
+
+button:hover b {
+    padding-left: 0.4rem;
+    transition: 0.5s;
+}
+
+.cardsSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 6rem auto;
+    gap:4rem;
+}
+
+.cardsHeading {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.cardsHeading h1 {
+    font-family: Montserrat-VariableFont_wght;
+    font-weight: 600;
+    font-size: 3rem;
+    color: black;
+    line-height: 3.5rem;
+}
+
+.cardsHeading h2 {
+    font-family: Montserrat-VariableFont_wght_3;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgb(58, 62, 58);
+    line-height: 1.5rem;
+    width: 40%;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:4rem;
+}
+
+.card {
+    background-color: #e9ecef;
+    border: none;
+    height: 22rem;
+    max-width: 20rem;
+    border-radius: 15px;
+    padding: 1.5rem 1.8rem 1.6rem 1.4rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    cursor: pointer;
+    transition: 0.6s;
+}
+.card:hover {
+    transition: 0.6s;
+    translate: 0 -20px;
+}
+.card:hover img {
+    transition: 0.6s;
+    transform: rotate(10deg);
+}
+
+.cardTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card h1 {
+    font-family: Montserrat-VariableFont_wght;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: rgb(47, 50, 47);
+}
+
+.card h2 {
+    font-family: Montserrat-VariableFont_wght_3;
+    font-size: 0.9rem;
+    font-weight: 550;
+    color: rgb(47, 50, 47);
+    line-height: 1.5rem;
+}
+
+.cards img {
+    width: 5rem;
+    height: auto;
+    transition: 0.6s;
+}
+
+.premiumSection {
+    min-height: 100vh;
+    background-color: #E34234;
+    margin: 4rem auto 6rem;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:4rem;
+}
+
+.premiumHeading {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-top: 3.5rem;
+}
+
+.premiumHeading h1 {
+    font-family: Montserrat-VariableFont_wght;
+    font-weight: 600;
+    font-size: 3rem;
+    color: black;
+    line-height: 3.5rem;
+}
+
+.premiumHeading h2 {
+    font-family: Montserrat-VariableFont_wght_3;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: black;
+    line-height: 1.5rem;
+}
+
+.premiumBody h1 {
+    font-family: Montserrat-VariableFont_wght;
+    font-size: 1.3rem;
+    font-weight: 550;
+    color: black;
+    line-height: 1.5rem;
+    
+}
+
+.premiumBody h2 {
+    font-family: Montserrat-VariableFont_wght_3;
+    font-size: 0.9rem;
+    font-weight: 550;
+    color: black;
+    line-height: 1.5rem;
+}
+
+.premiumBody li {
+    margin: 2rem auto;
+}
+
+.premiumBody {
+    display: flex;
+    flex-wrap: wrap;
+    gap:3rem;
+    width:65%;
+}
+
+.premiumButton button {
+    border-radius: 15px!important;
+    margin-bottom: 4.5rem;
+}
+
+.premCard {
+    background-color: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 8px 8px 0 #e9ecef;
+    cursor: pointer;
+    transition: 0.6s;
+}
+.premCard:hover {
+    box-shadow: 12px 12px 0 #e9ecef;
+    transition: 0.6s;
+}
+
+.tutorSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+    margin-bottom: 6rem;
+
+}
+
+.tutorHeading h1 {
+    font-family: Montserrat-VariableFont_wght;
+    font-weight: 600;
+    font-size: 2.8rem;
+    color: black;
+    line-height: 3.5rem;
+}
+
+.tutorBody {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+.tutorText {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.tutorBody h1 {
+    font-family: Montserrat-VariableFont_wght_2;
+    font-size: 1.8rem;
+    font-weight: 550;
+    color: rgb(60, 57, 57);
+    line-height: 1.5rem;
+}
+
+.tutorBody h2 {
+    font-family: Montserrat-VariableFont_wght_3;
+    font-size: 1rem;
+    color: black;
+    line-height: 1.5rem;
+}
+
+.tutorBody h3 {
+    font-family: Montserrat-VariableFont_wght_2;
+    font-size: 1rem;
+    color: black;
+    margin-bottom: 1rem;
+}
+
+.tutorBody h4 {
+    font-family: Montserrat-VariableFont_wght_3;
+    font-size: 0.8rem;
+    color: black;
+    line-height: 1.5rem;
+}
+
+.tutorBody hr {
+    font-weight: 700;
+}
+
+.tutorImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.tutorBody img {
+    width: 90%;
+    border-radius: 15px;
+}
+
+.tutorBtn {
+    display: flex;
+    justify-content: end;
+}
+
+.lastPremium .jumbotron {
+    height: 25rem!important;
+}
+@media only screen and (max-width: 1400px) {
+    .indexImage {
+        display: none;
+    }
+    .tutorImg {
+        display: none;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .indexText h1 {
+        font-size: 2.5rem!important;
+        line-height: 2rem;
+    }
+    .indexText h2 {
+        font-size: 0.8rem !important;
+        width:100%;
+    }
+    .contentLinks {
+        display: none;
+    }
+    .jumbotron h1 {
+        font-size: 2.5rem;
+        line-height:2.8rem;
+    }
+    .jumbotron h2 {
+        font-size: 0.9rem;
+    }
+    .cardsHeading h2 {
+        width:70%;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .premiumBody {
+        width: 90%;
+    }
+    .content .jumbotron h1 {
+        font-size: 2.3rem;
+        line-height:2.6rem;
+    }
+    .content .jumbotron h2 {
+        font-size: 0.8rem;
+    }
+    .cardsHeading h1 {
+        font-size:2.6rem;
+    }
+    .cardsHeading h2 {
+        width:90%;
+        font-size:1rem;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .premiumBody {
+        width:95%;
+    }
+    .jumbotron h1 {
+        font-size: 2.1rem;
+        line-height:2.4rem;
+    }
+    .cardsHeading h2 {
+        width:95%;
+    }
+}

@@ -1,0 +1,55 @@
+.FreelanceProfile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    padding-bottom: 5rem;
+    width: 80%;
+    gap: 5rem;
+}
+
+.ticketSection {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.freelanceCard {
+    background-color: #FFDEAD;
+    border-radius: 12px;
+    padding: 1.5rem;
+    max-width:20rem;
+    display: flex;
+    flex-direction: column;
+    gap:1.1rem;
+    color: white;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+
+.freelanceCard h6 {
+    font-family: Montserrat-VariableFont_wght;
+    font-size: 1.4rem;
+    
+}
+
+.freelanceCard p {
+    font-family: Montserrat-VariableFont_wght_3;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+}
+
+.tickets {
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.2rem;
+    
+}
+
+@media only screen and (max-width:800px) {
+    .FreelanceProfile {
+        width:85%;
+    }
+}

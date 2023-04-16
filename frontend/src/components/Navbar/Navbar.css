@@ -1,0 +1,98 @@
+nav {
+    width:100%;
+    padding:0 6rem;
+    margin: 0 auto;
+    height: 5rem;
+    background-color: white;
+}
+
+
+.navbar-brand {
+    font-size: 2.2rem;
+    font-family:Montserrat-VariableFont_wght;
+}
+
+.navbar-brand img {
+    width: 7.2rem;
+    height:auto;
+}
+
+.collapse ul{
+    margin-left:2rem;
+}
+
+
+.collapse li{
+    margin:0 1.2rem;
+}
+
+.premium li{
+    margin:0 0.6rem;
+}
+
+.collapse ul li a{
+    font-size:1rem;
+    font-family:Montserrat-VariableFont_wght_3;
+    color: rgb(35, 35, 35)!important;
+}
+
+.collapse button {
+    border-radius: 20px!important;
+    width:8rem;
+}
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; 
+    width: 0; 
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 5rem; /* Stay at the top */
+    right: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.2s; /* 0.5 second transition effect to slide in the sidenav */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
+  .l {
+    padding-bottom:5rem;
+    text-align: center;
+  }
+  
+.sidenav li{
+    margin: 2.2rem auto;
+}
+
+  /* Position and style the close button (top right corner) */
+ .closeBtn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .sideBtn {
+    margin-right:1rem;
+    color: white!important;
+  }
+  
+  .sidenav h2 {
+    color:#e9ecef!important;
+    font-family: Montserrat-VariableFont_wght_3;
+    font-size: 1.3rem;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .sidenavSec {
+        display:none;
+    }
+  }

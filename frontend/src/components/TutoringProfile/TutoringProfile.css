@@ -1,0 +1,21 @@
+.TutoringProfile {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap:4rem;
+    padding-bottom:5rem;
+    width:60%;
+    margin:0 auto;
+}
+
+.tutorAccount {
+    display: flex;
+    flex-direction: column;
+    gap:1.5rem;
+}
+
+@media only screen and (max-width:800px) {
+    .TutoringProfile {
+        width:85%;
+    }
+}

@@ -1,0 +1,57 @@
+.DetailsProfile {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap:5rem;
+    padding-bottom:5rem;
+    width:60%;
+    margin:0 auto;
+}
+
+.accountDetails {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap:2rem;
+}
+
+.accountDetails form{
+    display: flex;
+    flex-direction: column;
+    gap:1.5rem;
+}
+
+.form-control {
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: black;   
+    cursor: pointer;
+}
+
+.form-control:focus {
+    border-color:black;
+    box-shadow: none;
+
+}
+
+.accountPremium {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap:2rem;
+    padding-top:3rem;
+}
+
+.premiumButtons {
+    display: flex;
+    flex-direction: row;
+    gap:1rem;
+}
+
+@media only screen and (max-width:800px) {
+    .DetailsProfile {
+        width:85%;
+    }
+}
