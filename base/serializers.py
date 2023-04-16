@@ -19,7 +19,7 @@ class UserSerializer(serializers.ModelSerializer):
         return obj.is_staff
 
 class UserSerializerWithToken(UserSerializer):
-    token = serializers.SerializerMethodField(read_only=True)
+    token = serializers.SerializerMethodField(read_only=True )
     class Meta:
         model = User
         fields = ['id', 'username', 'email', 'name', 'isAdmin', 'token']
