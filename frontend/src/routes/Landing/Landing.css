@@ -439,6 +439,63 @@ button:hover b {
     border-radius: 10px;
 }
 
+.freelanceIndex {
+    padding-top:5rem;
+    min-height:100vh;
+    background-color: #5F9EA0;
+    display: flex;
+    justify-content: center;
+    padding:8rem 0 3rem 0;
+}
+
+.freelanceIndex .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap:5rem;
+}
+
+.indexText {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap:2rem;
+}
+
+.indexInfo {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 12px 12px 0 #e9ecef;
+    padding:1.5rem;
+    max-width:30rem;
+    cursor: pointer;
+}
+
+.indexInfo h1 {
+    font-family: Montserrat-VariableFont_wght;
+    font-size: 2rem;
+    color: rgb(52, 55, 52);
+    line-height: 2.9rem;
+}
+
+.indexInfo h2 {
+    font-family: Montserrat-VariableFont_wght_2;
+    font-size: 0.8rem;
+    color: rgb(70, 75, 70);
+    line-height: 1rem;
+}
+
+.indexInfo li {
+    margin: 2rem auto;
+}
+
+.middle {
+    display: flex;
+    justify-content: center;
+
+}
+
 
 @media only screen and (max-width: 1400px) {
     .indexImage {
