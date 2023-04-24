@@ -1,8 +1,6 @@
 import {React, useState} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
+import {useSelector} from 'react-redux';
 import {Link} from 'react-router-dom';
-
-import {logout} from '../../features/userActions'
 
 import './Navbar.css'
 
@@ -11,14 +9,8 @@ function Navbar() {
     const [open,
         setOpen] = useState(false);
 
-    const dispatch = useDispatch()
-
     const userLogin = useSelector(state => state.userLogin)
     const {userInfo} = userLogin
-
-    const logoutHandler = () => {
-        dispatch(logout())
-    }
 
     const handleSidenav = () => {
         if (open) {
