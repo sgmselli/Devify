@@ -43,29 +43,18 @@ function Landing() {
     }
 
     const python = () => {
-        setCourse('Beginner Python')
+        setCourse('Python')
         handleClick()
     }
     const java = () => {
-        setCourse('Beginner Java')
-        handleClick()
-    }
-    const javascript = () => {
-        setCourse('Beginner Javascript')
+        setCourse('Java')
         handleClick()
     }
     const webdev = () => {
         setCourse('Web Development')
         handleClick()
     }
-    const projects = () => {
-        setCourse('Resume projects')
-        handleClick()
-    }
-    const dsa = () => {
-        setCourse('DS & A')
-        handleClick()
-    }
+
 
     return (
         <Layout>
@@ -282,8 +271,8 @@ function Landing() {
 
                                 <div className='col-lg card' onClick={python}>
                                     <div className='cardTitle'>
-                                        <h1>Beginner Python</h1>
-                                        <img src={window.location.origin + "/static/python.png"} alt="money"/>
+                                        <h1>Python</h1>
+                                        <img src={window.location.origin + "/static/python2.png"} alt="money"/>
                                     </div>
                                     <div>
                                         <h2>We will start with the basics of the Python language, starting with basic
@@ -301,7 +290,7 @@ function Landing() {
                                 </div>
                                 <div className='col-lg card' onClick={java}>
                                     <div className='cardTitle'>
-                                        <h1>Beginner Java</h1>
+                                        <h1>Java</h1>
                                         <img src={window.location.origin + "/static/java.png"} alt="money"/>
                                     </div>
                                     <div>
@@ -317,29 +306,6 @@ function Landing() {
                                         </a>
                                     </div>
                                 </div>
-
-                                <div className='col-lg card' onClick={javascript}>
-                                    <div className='cardTitle'>
-                                        <h1>Beginner JavaScript</h1>
-                                        <img src={window.location.origin + "/static/javascript.png"} alt="money"/>
-                                    </div>
-                                    <div>
-                                        <h2>Heard of JavaScript? Learn JavaScript and make your resume shine with our
-                                            tutor course, where we will learn indepth JavaScript and build great projects.</h2>
-                                    </div>
-                                    <div>
-                                        <a>
-                                            <h2>
-                                                <u>Learn JavaScript</u>
-                                                ➔</h2>
-                                        </a>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div className='row cards'>
-
                                 <div className='col-lg card' onClick={webdev}>
                                     <div className='cardTitle'>
                                         <h1>Web Development</h1>
@@ -359,48 +325,10 @@ function Landing() {
                                         </a>
                                     </div>
                                 </div>
-                                <div className='col-lg card' onClick={projects}>
-                                    <div className='cardTitle'>
-                                        <h1>Resume projects.</h1>
-                                        <img src={window.location.origin + "/static/laptop.png"} alt="money"/>
-                                    </div>
-                                    <div>
-                                        <h2>Join us along a tutoring course where we will go through the top resume
-                                            projects tailoured to you that we will teach you how to build.</h2>
 
-                                    </div>
-                                    <div>
-                                        <a>
-                                            <h2>
-                                                <u>Build now</u>
-                                                ➔</h2>
-                                        </a>
-                                    </div>
-                                </div>
+                               </div>
 
-                                <div className='col-lg card' onClick={dsa}>
-                                    <div className='cardTitle'>
-                                        <h1>DS&A.</h1>
-                                        <img src={window.location.origin + "/static/dsa.png"} alt="money"/>
-                                    </div>
-                                    <div>
-                                        <h2>Ready to start applying for dev internships/jobs? Ace the coding exams with
-                                            our data structures & algorithms 1:1 sessions, giving you the best advice and
-                                            schedual</h2>
-
-                                    </div>
-                                    <div>
-                                        <a>
-                                            <h2>
-                                                <u>Learn DS&A</u>
-                                                ➔</h2>
-                                        </a>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
+                           </div>
                     </div>
 
                     <div className='tutorContact container-fluid'>

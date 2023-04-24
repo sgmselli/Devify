@@ -1,12 +1,22 @@
 .tutorIndex {
-    background-color: 			#FEC8D8;
+    background-color: 			rgb(51, 51, 128);
     padding-top:5rem;
     min-height:90vh;
     display: flex;
     justify-content: center;
     padding:8rem 0 3rem 0;
     margin-bottom:4rem;
+    
 }
+
+.tutorIndex .indexText h1 {
+    color: white!important;
+}
+.tutorIndex .indexText h2 {
+    color: white!important;
+}
+
+
 
 .tutorIndex .row {
     display: flex;
