@@ -567,4 +567,7 @@ button:hover b {
     .example img {
         max-width: 22rem;
     }
+    .indexInfo {
+        box-shadow: none;
+    }
 }

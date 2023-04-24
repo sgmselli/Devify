@@ -51,7 +51,6 @@ function Login() {
                             <div class="form-group">
                                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required/>
                                 <div>
-                                <small>Forgot your password? Reset your password <Link to='/Reset'><u>here</u></Link>.</small>
                                 <small>Don't have an account? Sign up <Link to='/SignUp'><u>here</u></Link>.</small>
                                 </div>
                                 

@@ -15,7 +15,10 @@ function Footer() {
                     </div>
                     <div className='socials'>
                         <ul>
-                            <Link  style={{
+                            <Link 
+
+                            to='https://www.linkedin.com/in/mattsellings/'
+                            style={{
                                 textDecoration: 'none'
                             }}>
                                 <li>
@@ -51,6 +54,7 @@ function Footer() {
                             </Link>
 
                             <Link
+                                to='https://twitter.com/devifyuk42303'
                                 style={{
                                 textDecoration: 'none'
                             }}>

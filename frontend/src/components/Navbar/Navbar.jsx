@@ -59,19 +59,7 @@ function Navbar() {
                                             <h2 className="nav-link">mydevify</h2>
                                         </Link>
                                     </li>
-                                    {userInfo
-                                        ? <li className="nav-item" onClick={logoutHandler}>
-                                                <Link to='/Login' className="nav-link">
-                                                    <h2 className="nav-link">Log out</h2>
-                                                </Link>
-                                            </li>
-
-                                        : <li className="nav-item">
-                                            <Link to="/Login" className="nav-link">
-                                                <h2 className="nav-link">Log in</h2>
-                                            </Link>
-                                        </li>
-}
+                                   
                                     <li className="nav-item">
                                         <Link to="/Premium" className="nav-link">
                                             <h2 className="nav-link">Premium</h2>
@@ -104,23 +92,18 @@ function Navbar() {
                         </ul>
                         <span className="navbar-text">
                             <ul className="premium navbar-nav mr-auto">
-                                {userInfo
-                                    ? <li className="nav-item">
-                                            <Link
-                                                to={userInfo
-                                                ? '/Account'
-                                                : '/Login'}
-                                                className="nav-link">
-                                                <h2 className="nav-link">myDevify</h2>
-                                            </Link>
-                                        </li>
+                             
+                                <li className="nav-item">
+                                    <Link
+                                        to={userInfo
+                                            ? '/Account'
+                                            : '/Login'}
+                                            className="nav-link">
+                                            <h2 className="nav-link">mydevify</h2>
+                                    </Link>
+                                </li>
 
-                                    : <li className="nav-item">
-                                        <Link to="/Login" className="nav-link">
-                                            <h2 className="nav-link">myDevify</h2>
-                                        </Link>
-                                    </li>
-}
+                                  
 
                                 <li className="nav-item">
                                     <Link to="/Premium" className="nav-link">

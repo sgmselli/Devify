@@ -1,5 +1,5 @@
 .Login .row{
-    height:100vh;
+    min-height:100vh;
     padding-top: 5rem;
 }
 
@@ -19,7 +19,7 @@
     font-family: Montserrat-VariableFont_wght;
     font-size: 2.6rem;
     color: rgb(50, 48, 48);
-    line-height: 3.5rem;
+    line-height: 2.8rem;
 }
 
 .Login form {
@@ -46,5 +46,12 @@
     }
     .Login h1 {
         font-size:2rem;
+    }
+}
+
+@media only screen and (max-width:850px) {
+    .Login h1 {
+        font-size:1.8rem;
+        line-height: 2rem;
     }
 }

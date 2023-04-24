@@ -33,7 +33,7 @@ function Premium() {
 
                     <div className='premiumText'>
                         <h1>Get Premium</h1>
-                        <h2>Plans from just £29.99 a month for freelancing and all courses. Cancel anytime.</h2>
+                        <h2>Plans from just £29.99 a month, freelance jobs guaranteed. Cancel anytime.</h2>
                     </div>
                     <div className='premiumBtns'>
                             <button onClick={handleClick } className='btn btn-info btn-md'>Premium plans</button>
