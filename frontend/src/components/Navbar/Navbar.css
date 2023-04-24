@@ -4,11 +4,12 @@ nav {
     margin: 0 auto;
     height: 5rem;
     background-color: white;
+    box-shadow:  0 1px 0.5rem rgb(240, 240, 240);
 }
 
 
 .navbar-brand {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-family:Montserrat-VariableFont_wght;
 }
 

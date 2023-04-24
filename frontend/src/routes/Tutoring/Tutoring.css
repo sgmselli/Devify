@@ -1,10 +1,11 @@
 .tutorIndex {
     background-color: 			#FEC8D8;
     padding-top:5rem;
-    min-height:100vh;
+    min-height:90vh;
     display: flex;
     justify-content: center;
     padding:8rem 0 3rem 0;
+    margin-bottom:4rem;
 }
 
 .tutorIndex .row {
@@ -12,21 +13,19 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    gap:5rem;
+    gap:4rem;
 }
 
 .subjects {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin:4rem auto;
-    gap:3rem;
 }
 
 .subjectBoxes {
     display:flex;
     flex-wrap:wrap;
-    gap:2rem 1rem;
+    gap:3rem;
 }
 
 .header {

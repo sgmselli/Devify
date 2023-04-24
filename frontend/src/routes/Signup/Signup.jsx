@@ -36,7 +36,7 @@ function Signup() {
                         </div>
                         <div className='col'>
 
-                            <h1>Create an account.</h1>
+                            <h1>Create a myDevify account.</h1>
                             {matchError && !userInfo && <div className='alert alert-danger'>Password inputs did not match. Try again.</div> }
                             {error && <div className='alert alert-danger'>Error with registration. Try again.</div> }
                             {userInfo && <div className='alert alert-success'>Registration successful.</div> }

@@ -41,7 +41,7 @@ function Login() {
                         <img className='' src={"/static/loginimage.png"} alt="headshot" />
                     </div>
                     <div className='col'>
-                        <h1>Log into your account.</h1>
+                        <h1>Log into myDevify.</h1>
                         {error && <div className='alert alert-danger'>Username or password is incorrect.</div> }
                         {userInfo && <div className='alert alert-success'>Login successful.</div> }
                         <form onSubmit={submitHandler}>

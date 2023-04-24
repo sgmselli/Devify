@@ -20,7 +20,7 @@ function AdminControl() {
     const {bookings} = tutorBookings;
 
     const [user,
-        setUser] = useState('a@gmail.com')
+        setUser] = useState('')
 
     const [title,
         setTitle] = useState('');
@@ -54,7 +54,11 @@ function AdminControl() {
     }
 
     const handleClickAssign = (id) => () => {
-        dispatch(freelanceAssign(id, {'user': user}))
+        if(user === '') {
+            dispatch(freelanceAssign(id, {'user': profiles[0].username}))
+        } else {
+            dispatch(freelanceAssign(id, {'user': user}))
+        }
     }
 
     useEffect(() => {
@@ -63,9 +67,9 @@ function AdminControl() {
         dispatch(listBookings());
     }, [dispatch, ])
 
-    const availableFreelances = freelances.filter((ticket) => ticket.completed == false && ticket.user == '');
-    const takenFreelances = freelances.filter((ticket) => ticket.completed == false && ticket.user != '');
-    const pastFreelances = freelances.filter((ticket) => ticket.completed == true);
+    const availableFreelances = freelances.filter((ticket) => ticket.completed === false && ticket.user === '');
+    const takenFreelances = freelances.filter((ticket) => ticket.completed === false && ticket.user !== '');
+    const pastFreelances = freelances.filter((ticket) => ticket.completed === true);
 
     return (
         <div className='AdminControl'>

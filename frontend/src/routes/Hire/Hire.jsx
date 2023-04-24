@@ -41,16 +41,16 @@ function Hire() {
         .split('T')[0];
 
     return (
-        <Layout>
+        <div>
             <div className='hireIndex'>
                 <div className='container row'>
-                    <div className='col indexText'>
+                    <div className='col-xl indexText'>
                         <h1 className='text-light'>Hire our developers for your project. Big or small.</h1>
                         <h2 className='text-light'>Devify not only finds freelance work for aspiring
                             developers, but we offer it too. If you need a project built for you or helping
                             out with, fill out our form and apply.</h2>
                     </div>
-                    <div className='col indexInfo'>
+                    <div className='col-xl indexInfo'>
                         <h1>Hire us.</h1>
                         <ul>
                             <li>
@@ -121,8 +121,7 @@ function Hire() {
 
                 </form>
             </div>
-
-        </Layout>
+</div>
     )
 
 }

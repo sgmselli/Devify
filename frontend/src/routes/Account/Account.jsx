@@ -80,9 +80,7 @@ function Account() {
                 <div className='accountHeader'>
                     <div className='container'>
                         <div className='accountHeaderText'>
-                            <h4>Welcome back, {userInfo
-                                    ? userInfo.name
-                                    : null}👋</h4>
+                            <h4>Welcome back, {(userInfo.name).split(' ')[0].charAt(0).toUpperCase()+(userInfo.name).split(' ')[0].slice(1)}👋</h4>
                             <h5>Here you can view your account details, manage and pick up freelancing jobs as well as manage and book tutoring sessions.
                             </h5>
                         </div>

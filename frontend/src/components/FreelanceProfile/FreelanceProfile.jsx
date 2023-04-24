@@ -1,4 +1,4 @@
-import {React, useEffect, useState} from 'react';
+import {React, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {listFreelances, freelanceApply} from '../../features/freelanceAction';
 
@@ -39,7 +39,7 @@ function FreelanceProfile() {
             <div className='ticketSection'>
                 <h2>Available tickets.</h2>
                 {loading
-                    ? <h3>loading...</h3>
+                    ? <div class="loader"></div>
                     : error
                         ? <h2>{error}</h2>
                         : availableFreelances.length > 0
@@ -51,9 +51,8 @@ function FreelanceProfile() {
                                                 <p>Client: {ticket.client}</p>
                                                 <p>Due: {ticket.dueDate}</p>
                                                 <p>Earnings: £{ticket.price}</p>
-                                                <form onSubmit={handleClickApply(ticket._id)}>
-                                                    <button type='submit' className='btn btn-md btn-dark'>Apply</button>
-                                                </form>
+                                                    <button type='submit' onClick={handleClickApply(ticket._id)} className='btn btn-md btn-dark'>Apply</button>
+                                        
 
                                             </div>
 
@@ -67,7 +66,7 @@ function FreelanceProfile() {
             <div className='ticketSection'>
                 <h2>Your current tickets.</h2>
                 {loading
-                    ? <h2>loading</h2>
+                    ? <div class="loader"></div>
                     : error
                         ? <h2>{error}</h2>
                         : currentFreelances.length > 0
@@ -93,7 +92,7 @@ function FreelanceProfile() {
             <div className='ticketSection'>
                 <h2>Past tickets.</h2>
                 {loading
-                    ? <h2>loading</h2>
+                    ? <div class="loader"></div>
                     : error
                         ? <h2>{error}</h2>
                         : pastFreelances.length > 0

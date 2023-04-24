@@ -21,20 +21,20 @@ function Navbar() {
     }
 
     const handleSidenav = () => {
-        if(open) {
+        if (open) {
             document
                 .getElementById("mySidenav")
                 .style
-                .width = "0";             
+                .width = "0";
             setOpen(false);
 
         } else {
             document
                 .getElementById("mySidenav")
                 .style
-                .width = "100%";                
+                .width = "100%";
             setOpen(true);
-        }    
+        }
     }
 
     return (
@@ -49,28 +49,14 @@ function Navbar() {
 
                             <div className='l'>
                                 <ul className="">
-                                    <li className="nav-item">
-                                        <Link to='/Freelance' className="nav-link">
-                                            <h2 className="nav-link">Freelance</h2>
-                                        </Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link to="/Tutoring" className="nav-link">
-                                            <h2 className="nav-link">Tutoring</h2>
-                                        </Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link to="/Hire" className="nav-link">
-                                            <h2 className="nav-link">Hire us</h2>
-                                        </Link>
-                                    </li>
+                                    
                                     <li className="nav-item">
                                         <Link
                                             to={userInfo
                                             ? '/Account'
                                             : '/Login'}
                                             className="nav-link">
-                                            <h2 className="nav-link">Account</h2>
+                                            <h2 className="nav-link">mydevify</h2>
                                         </Link>
                                     </li>
                                     {userInfo
@@ -112,45 +98,26 @@ function Navbar() {
 
                     <div className="collapse navbar-collapse" id="navbarText">
                         <ul className="links navbar-nav mr-auto">
-                            <li className="nav-item">
-                                <Link to='/Freelance' className="nav-link">
-                                    <h2 className="nav-link">Freelance</h2>
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link to="/Tutoring" className="nav-link">
-                                    <h2 className="nav-link">Tutoring</h2>
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link to="/Hire" className="nav-link">
-                                    <h2 className="nav-link">Hire us</h2>
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link
-                                    to={userInfo
-                                    ? '/Account'
-                                    : '/Login'}
-                                    className="nav-link">
-                                    <h2 className="nav-link">Account</h2>
-                                </Link>
-                            </li>
+
+                           
 
                         </ul>
                         <span className="navbar-text">
                             <ul className="premium navbar-nav mr-auto">
-
                                 {userInfo
-                                    ? <li className="nav-item" onClick={logoutHandler}>
-                                            <Link to='/Login' className="nav-link">
-                                                <h2 className="nav-link">Log out</h2>
+                                    ? <li className="nav-item">
+                                            <Link
+                                                to={userInfo
+                                                ? '/Account'
+                                                : '/Login'}
+                                                className="nav-link">
+                                                <h2 className="nav-link">myDevify</h2>
                                             </Link>
                                         </li>
 
                                     : <li className="nav-item">
                                         <Link to="/Login" className="nav-link">
-                                            <h2 className="nav-link">Log in</h2>
+                                            <h2 className="nav-link">myDevify</h2>
                                         </Link>
                                     </li>
 }

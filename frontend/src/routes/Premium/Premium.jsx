@@ -33,7 +33,7 @@ function Premium() {
 
                     <div className='premiumText'>
                         <h1>Get Premium</h1>
-                        <h2>Plans from just £39.99 a month for freelancing and all courses. Cancel anytime.</h2>
+                        <h2>Plans from just £29.99 a month for freelancing and all courses. Cancel anytime.</h2>
                     </div>
                     <div className='premiumBtns'>
                             <button onClick={handleClick } className='btn btn-info btn-md'>Premium plans</button>
@@ -94,9 +94,9 @@ function Premium() {
                                 <td>Very comfortable building full stack web applications</td>
                             </tr>
                             <tr>
-                                <td>£99.99ppm</td>
-                                <td>£39.99ppm</td>
-                                <td>£70.99ppm</td>
+                                <td>£69.99 per month</td>
+                                <td>£29.99 per month</td>
+                                <td>£49.99 per month</td>
                             </tr>
                             <tr>
                                 <td>
@@ -163,7 +163,7 @@ function Premium() {
                                 <td>New to coding or web development</td>
                             </tr>
                             <tr>
-                                <td>£99.99ppm</td>
+                                <td>£69.99 per month</td>
                             </tr>
                             <tr>
                                 <td>
@@ -209,7 +209,7 @@ function Premium() {
                                     React/Django</td>
                             </tr>
                             <tr>
-                                <td>£39.99ppm</td>
+                                <td>£29.99 per month</td>
                             </tr>
                             <tr>
                                 <td >
@@ -251,7 +251,7 @@ function Premium() {
                             <td>Very comfortable building full stack web applications</td>
                         </tr>
                         <tr>
-                            <td>£70.99ppm</td>
+                            <td>£49.99 per month</td>
                         </tr>
                         <tr>
 

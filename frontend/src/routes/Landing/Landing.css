@@ -29,7 +29,6 @@
     justify-content: center;
     background-color: #FFBF00;
     height: 100vh;
-
 }
 
 .index .row {
@@ -152,8 +151,6 @@
 
 .jumbodetails button {
     margin: 3rem auto;
-    border-radius: 20px!important;
-    width: 10rem;
 }
 
 b {
@@ -197,7 +194,7 @@ button:hover b {
     font-weight: 500;
     color: rgb(58, 62, 58);
     line-height: 1.5rem;
-    width: 40%;
+    width: 50%;
 }
 
 .cards {
@@ -205,6 +202,7 @@ button:hover b {
     justify-content: center;
     align-items: center;
     gap:4rem;
+    margin:1.5rem auto;
 }
 
 .card {
@@ -261,7 +259,7 @@ button:hover b {
 .premiumSection {
     min-height: 100vh;
     background-color: #E34234;
-    margin: 4rem auto 6rem;
+    margin-top: 4rem;
 
     display: flex;
     align-items: center;
@@ -412,6 +410,11 @@ button:hover b {
     gap: 2.5rem;
 }
 
+.tutorBody mark {
+    font-weight: 700;
+    background: none;
+}
+
 .tutorBody img {
     width: 90%;
     border-radius: 15px;
@@ -425,6 +428,18 @@ button:hover b {
 .lastPremium .jumbotron {
     height: 25rem!important;
 }
+
+.example {
+    margin:9rem auto;
+}
+
+.example img{
+    max-width:35rem;
+    height:auto;
+    border-radius: 10px;
+}
+
+
 @media only screen and (max-width: 1400px) {
     .indexImage {
         display: none;
@@ -436,7 +451,7 @@ button:hover b {
 @media only screen and (max-width: 1000px) {
     .indexText h1 {
         font-size: 2.5rem!important;
-        line-height: 2rem;
+        line-height: 2.5rem;
     }
     .indexText h2 {
         font-size: 0.8rem !important;
@@ -475,6 +490,10 @@ button:hover b {
         width:90%;
         font-size:1rem;
     }
+    .example img {
+        max-width: 28rem;
+    }
+
 }
 
 @media only screen and (max-width:500px) {
@@ -487,5 +506,8 @@ button:hover b {
     }
     .cardsHeading h2 {
         width:95%;
+    }
+    .example img {
+        max-width: 22rem;
     }
 }

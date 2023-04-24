@@ -1,6 +1,8 @@
 import {React, useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {update, details} from '../../features/userActions'
+import {Link} from 'react-router-dom';
+import {logout} from '../../features/userActions'
 
 import './DetailsProfile.css'
 
@@ -38,6 +40,10 @@ function DetailsProfile() {
         dispatch(update({'name': name, 'email': email, 'password': password}));
     }
 
+    const logoutHandler = () => {
+        dispatch(logout())
+    }
+
     return (
         <div className='DetailsProfile'>
             <div className='accountDetails'>
@@ -45,8 +51,8 @@ function DetailsProfile() {
                     <h1>Your account.</h1>
                 </div>
 
-                {error && <div className='alert alert-danger'>Error with updating your details. Try again.</div> }
-                {userUpdated && <div className='alert alert-success'>Your details have been successfully updated.</div> }
+                {error && <div className='alert alert-danger'>Error with updating your details. Try again.</div>}
+                {userUpdated && <div className='alert alert-success'>Your details have been successfully updated.</div>}
 
                 <div >
                     <form onSubmit={submitHandler}>
@@ -86,17 +92,30 @@ function DetailsProfile() {
 
                         <div className='buttonMiddle'>
                             <button type="submit" class="btn btn-dark btn-md">Change details</button>
+
                         </div>
                     </form>
                 </div>
 
-                <div className='accountPremium'>
+                <div className='accountDetails'>
+                    <div className='accountSubh'>
+                        <h1>Log out your Devify.</h1>
+                    </div>
+
+                    <Link to='/Login'>
+                        <button className='btn btn-danger btn-md' onClick={logoutHandler}>
+                            Log out</button>
+                    </Link>
+                </div>
+
+                <div className='accountDetails'>
                     <div>
                         <h1>Your Premium.</h1>
                     </div>
 
                     <div className='premiumButtons'>
-                        <button className='btn btn-info btn-md'> Get premium</button>
+                        <button className='btn btn-info btn-md'>
+                            Get premium</button>
                     </div>
 
                 </div>

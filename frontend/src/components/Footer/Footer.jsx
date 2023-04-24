@@ -32,7 +32,7 @@ function Footer() {
                                 </li>
                             </Link>
 
-                            <Link
+                            <Link to='https://www.instagram.com/devifyuk/'
                                 style={{
                                 textDecoration: 'none'
                             }}>
