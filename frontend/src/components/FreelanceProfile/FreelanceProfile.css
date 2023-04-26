@@ -4,7 +4,6 @@
     justify-content: center;
     margin: 0 auto;
     padding-bottom: 5rem;
-    width: 80%;
     gap: 5rem;
 }
 
@@ -13,14 +12,14 @@
     flex-direction: column;
     flex-wrap: wrap;
     gap: 2rem;
+    height:25rem;
 }
 
 .freelanceCard {
     background-color: #FFDEAD;
     border-radius: 12px;
     padding: 1.5rem;
-    max-width:20rem;
-    min-width:16rem;
+    width:20rem;
     display: flex;
     flex-direction: column;
     gap:1.1rem;
@@ -49,6 +48,25 @@
     gap:1.2rem;
     
 }
+
+.ticketsCarousel {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap:2rem;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+.ticketsHeader {
+    display: flex;
+    align-items: center;
+    color: black;
+    gap:1rem;
+}
+
+
 
 @media only screen and (max-width:800px) {
     .FreelanceProfile {

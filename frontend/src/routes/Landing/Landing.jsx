@@ -422,8 +422,9 @@ function Landing() {
                         <div id="carouselExampleControls" class="carousel slide container" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <div className='ticketsCarousel'>
-                                        <Link to='/Premium'>
+                                    <div className='landingCarousel'>
+                                        <Link to='/Premium'
+                                            style={{ textDecoration: 'none'}}>
                                         <div className='freelanceCard bg-dark'>
 
                                                 <h6>1</h6>
@@ -437,8 +438,9 @@ function Landing() {
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <div className='ticketsCarousel'>
-                                        <Link to='/Premium'>
+                                    <div className='landingCarousel'>
+                                        <Link to='/Premium'
+                                            style={{ textDecoration: 'none'}}>
                                         <div className='freelanceCard bg-dark'>
                                                 <h6>2</h6>
                                                 <p>Brief: </p>
@@ -451,8 +453,9 @@ function Landing() {
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <div className='ticketsCarousel'>
-                                        <Link to='/Premium'>
+                                    <div className='landingCarousel'>
+                                        <Link to='/Premium'
+                                            style={{ textDecoration: 'none'}}>
                                         <div className='freelanceCard bg-dark'>
                                                 <h6>3</h6>
                                                 <p>Brief: </p>
