@@ -418,16 +418,72 @@ function Landing() {
                                 </Link>
                             </div>
                         </div>
-                        <div className='example'>
-                            <img src={"/static/example.png"} alt="headshot"/>
+                        <div className='col-xl'>
+                        <div id="carouselExampleControls" class="carousel slide container" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div className='ticketsCarousel'>
+                                        <Link to='/Premium'>
+                                        <div className='freelanceCard bg-dark'>
+
+                                                <h6>1</h6>
+                                                <p>Brief: </p>
+                                                <p>Client:</p>
+                                                <p>Due: </p>
+                                                <p>Earnings: £</p>
+                                                <button type='submit' className='btn btn-md btn-info'>Apply</button>    
+                                        </div>
+                                        </Link>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div className='ticketsCarousel'>
+                                        <Link to='/Premium'>
+                                        <div className='freelanceCard bg-dark'>
+                                                <h6>2</h6>
+                                                <p>Brief: </p>
+                                                <p>Client:</p>
+                                                <p>Due: </p>
+                                                <p>Earnings: £</p>
+                                                <button type='submit' className='btn btn-md btn-info'>Apply</button>
+                                        </div>
+                                        </Link>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div className='ticketsCarousel'>
+                                        <Link to='/Premium'>
+                                        <div className='freelanceCard bg-dark'>
+                                                <h6>3</h6>
+                                                <p>Brief: </p>
+                                                <p>Client:</p>
+                                                <p>Due: </p>
+                                                <p>Earnings: £</p>
+                                                <button type='submit' className='btn btn-md btn-info'>Apply</button>   
+                                        </div>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
                         </div>
                     </div>
-
                 </div>
 
-                <Hire/>
-
             </div>
+                
+                
+
+            <Hire/>
+
+        </div>
         </Layout>
     )
 }

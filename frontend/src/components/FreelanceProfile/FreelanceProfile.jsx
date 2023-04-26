@@ -20,7 +20,6 @@ function FreelanceProfile() {
     const freelanceList = useSelector(state => state.freelances)
     const {error, loading, freelances} = freelanceList;
 
-
     //Arrange tickets
     const availableFreelances = freelances.filter((ticket) => ticket.completed == false && ticket.user == '');
     const currentFreelances = freelances.filter((ticket) => ticket.completed == false && ticket.user == userInfo.username);
@@ -51,8 +50,10 @@ function FreelanceProfile() {
                                                 <p>Client: {ticket.client}</p>
                                                 <p>Due: {ticket.dueDate}</p>
                                                 <p>Earnings: £{ticket.price}</p>
-                                                    <button type='submit' onClick={handleClickApply(ticket._id)} className='btn btn-md btn-dark'>Apply</button>
-                                        
+                                                <button
+                                                    type='submit'
+                                                    onClick={handleClickApply(ticket._id)}
+                                                    className='btn btn-md btn-dark'>Apply</button>
 
                                             </div>
 
@@ -61,6 +62,68 @@ function FreelanceProfile() {
 
                             : <h3>There is no current available tickets.</h3>
 }
+
+            <div>
+            {loading
+                    ? <div class="loader"></div>
+                    : error
+                        ? <h2>{error}</h2>
+                        : availableFreelances.length > 0
+                            ? <div>{(availableFreelances).map((ticket) => {
+                                        return (
+                                            <div className='freelanceCard bg-info'>
+                                                <h6>{ticket.title}</h6>
+                                                <p>Brief: {ticket.description}</p>
+                                                <p>Client: {ticket.client}</p>
+                                                <p>Due: {ticket.dueDate}</p>
+                                                <p>Earnings: £{ticket.price}</p>
+                                                <button
+                                                    type='submit'
+                                                    onClick={handleClickApply(ticket._id)}
+                                                    className='btn btn-md btn-dark'>Apply</button>
+
+                                            </div>
+
+                                        )
+                                    })}</div>
+
+                            : <h3>There is no current available tickets.</h3>
+}
+            <div id="carouselExampleControls" class="carousel slide container" data-ride="carousel">
+                            <div class="carousel-inner">
+                            <div>{(availableFreelances).map((ticket) => {
+                                        return (
+                                            <div className='carousel-item'>
+                                                <div className='ticketsCarousel'>
+                                            
+                                            <div className='freelanceCard bg-info'>
+                                                <h6>{ticket.title}</h6>
+                                                <p>Brief: {ticket.description}</p>
+                                                <p>Client: {ticket.client}</p>
+                                                <p>Due: {ticket.dueDate}</p>
+                                                <p>Earnings: £{ticket.price}</p>
+                                                <button
+                                                    type='submit'
+                                                    onClick={handleClickApply(ticket._id)}
+                                                    className='btn btn-md btn-dark'>Apply</button>
+
+                                            </div>
+                                            </div>
+                                            </div>
+                                        )
+                                    })}</div>
+                                
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+            </div>
             </div>
 
             <div className='ticketSection'>

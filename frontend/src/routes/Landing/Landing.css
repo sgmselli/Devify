@@ -495,6 +495,13 @@ button:hover b {
 
 }
 
+.ticketsCarousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+}
 
 @media only screen and (max-width: 1400px) {
     .indexImage {
