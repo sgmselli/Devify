@@ -142,7 +142,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'Devify',
         'USER': 'mattsellings',
-        'PASSWORD': os.environ.get('DB_PASS'),
+        'PASSWORD': 'Westlands01'+'%'+'%'+'%',
         'HOST': 'devify-identifier.cjoaoydyzjb8.eu-west-2.rds.amazonaws.com',
         'PORT': '5432',
     }
@@ -199,8 +199,10 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_ACCESS_KEY_ID = 'AKIAVTDHJ3APGGQW3ZHP'
+#os.environ.get('AWS_ACCESS_KEY_ID')
 
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_SECRET_ACCESS_KEY = 'if+ePdQmCOnxiJlnHcy5KYZ8AaDJP4H7uZ8jzlfp'
+#os.environ.get('AWS_SECRET_ACCESS_KEY')
 
 AWS_STORAGE_BUCKET_NAME = 'devify-bucket'
