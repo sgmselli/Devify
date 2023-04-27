@@ -84,7 +84,7 @@ function FreelanceProfile() {
         return card
     }
 
-    const carouselTickets = (ticketType) => {
+    const carouselTickets = (ticketType, myid) => {
 
         let ticket = ''
         let colour = '';
@@ -101,7 +101,7 @@ function FreelanceProfile() {
             ticket = pastFreelances
         }
 
-        const c = document.getElementById(ticketType);
+        const c = myid;
         const len = ticket.length;
         let i = 0;
 
@@ -145,17 +145,21 @@ function FreelanceProfile() {
 
     useEffect(() => {
 
+        const availableId = document.getElementById('availableFreelance')
+        const currentId = document.getElementById('currentFreelance')
+        const pastId = document.getElementById('pastFreelance')
+
         if (availableFreelances.length > 0) {
-            carouselTickets('availableFreelance');
+            carouselTickets('availableFreelance' , availableId);
         }
         if (currentFreelances.length > 0) {
-            carouselTickets('currentFreelance');
+            carouselTickets('currentFreelance', currentId);
         }
         if (pastFreelances.length > 0) {
-            carouselTickets('pastFreelance');
+            carouselTickets('pastFreelance', pastId);
         }
 
-    }, [freelanceList, document])
+    }, [freelanceList, document, ])
 
     return (
         <div className='FreelanceProfile'>
