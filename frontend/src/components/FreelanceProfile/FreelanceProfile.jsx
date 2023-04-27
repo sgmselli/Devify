@@ -1,4 +1,4 @@
-import {React, useEffect} from 'react';
+import {React, useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {listFreelances, freelanceApply} from '../../features/freelanceAction';
@@ -6,6 +6,9 @@ import {listFreelances, freelanceApply} from '../../features/freelanceAction';
 import './FreelanceProfile.css'
 
 function FreelanceProfile() {
+
+    //Current screen width
+    const windowSize = window.innerWidth;    
 
     const dispatch = useDispatch()
 
@@ -104,7 +107,8 @@ function FreelanceProfile() {
         const c = myid;
         const len = ticket.length;
         let i = 0;
-
+        let ticketsPerSlide = 1; //Number of tickets per carousel slide (default 1)
+        
         while (i < len) {
             const item = document.createElement('div');
             const display = document.createElement('div');
@@ -115,25 +119,41 @@ function FreelanceProfile() {
                 .classList
                 .add('ticketsCarousel');
 
+            if (i === 0) {
+                //first lots of tickets show on first carousel slide
+                item
+                .classList
+                .add('active');
+            }
+
+
+
             if (i <= len - 1) {
                 const ticket1 = ticket[i];
                 const card = displayTicket(ticket1.title, ticket1.description, ticket1.client, ticket1.dueDate, ticket1.price, ticketType, colour);
                 display.append(card);
 
             }
-            if (i + 1 <= len - 1) {
-                const ticket2 = ticket[i + 1];
-                const card = displayTicket(ticket2.title, ticket2.description, ticket2.client, ticket2.dueDate, ticket2.price, ticketType, colour);
-                display.append(card);
+            if (windowSize > 800) {
+                if (i + 1 <= len - 1) {
+                    const ticket2 = ticket[i + 1];
+                    const card = displayTicket(ticket2.title, ticket2.description, ticket2.client, ticket2.dueDate, ticket2.price, ticketType, colour);
+                    display.append(card);
+                }
+                ticketsPerSlide = 2;
             }
-            if (i + 2 <= len - 1) {
-                const ticket3 = ticket[i + 2];
-                const card = displayTicket(ticket3.title, ticket3.description, ticket3.client, ticket3.dueDate, ticket3.price, ticketType, colour);
-                display.append(card);
+            if (windowSize > 1100) {
+                if (i + 2 <= len - 1) {
+                    const ticket3 = ticket[i + 2];
+                    const card = displayTicket(ticket3.title, ticket3.description, ticket3.client, ticket3.dueDate, ticket3.price, ticketType, colour);
+                    display.append(card);
+                }
+                ticketsPerSlide = 3;
             }
+            
             item.append(display);
             c.append(item);
-            i += 3;
+            i += ticketsPerSlide;
         }
 
     }
@@ -149,17 +169,17 @@ function FreelanceProfile() {
         const currentId = document.getElementById('currentFreelance')
         const pastId = document.getElementById('pastFreelance')
 
-        if (availableFreelances.length > 0) {
+        if (availableFreelances.length > 0 && availableId.innerHTML === '') {
             carouselTickets('availableFreelance' , availableId);
         }
-        if (currentFreelances.length > 0) {
+        if (currentFreelances.length > 0 && currentId.innerHTML === '') {
             carouselTickets('currentFreelance', currentId);
         }
-        if (pastFreelances.length > 0) {
+        if (pastFreelances.length > 0 && pastId.innerHTML === '') {
             carouselTickets('pastFreelance', pastId);
         }
 
-    }, [freelanceList, document, ])
+    }, [freelanceList])
 
     return (
         <div className='FreelanceProfile'>
@@ -207,11 +227,9 @@ function FreelanceProfile() {
                 <div id="availableCarousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
 
-                        <div class="carousel-item active"></div>
-
                         
                         {loading //If loading, show loader.
-                            ? <div class="loader"></div>
+                            ? <h3>loading tickets...</h3>
                             : error //If not loading, if theres an error show error
                                 ? <h2>{error}</h2>
                                 : availableFreelances.length > 0 //If no error, check array of available freelances length
@@ -269,7 +287,7 @@ function FreelanceProfile() {
 
                         
                         {loading //If loading, show loader.
-                            ? <div class="loader"></div>
+                            ? <h3>loading tickets...</h3>
                             : error //If not loading, if theres an error show error
                                 ? <h2>{error}</h2>
                                 : currentFreelances.length > 0 //If no error, check array of available freelances length
@@ -326,7 +344,7 @@ function FreelanceProfile() {
 
                         
                         {loading //If loading, show loader.
-                            ? <div class="loader"></div>
+                            ? <h3>loading tickets...</h3>
                             : error //If not loading, if theres an error show error
                                 ? <h2>{error}</h2>
                                 : pastFreelances.length > 0 //If no error, check array of available freelances length
