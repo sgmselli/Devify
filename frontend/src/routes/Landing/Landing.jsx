@@ -405,21 +405,10 @@ function Landing() {
                 </div>
 
                 <div className='freelanceIndex'>
-                    <div className='container row'>
-                        <div className='col-xl indexText'>
-                            <h1 className='text-light'>Begin your developer freelance journey with us, today.</h1>
-                            <h2 className='text-light'>Getting experience is difficult, so we do it for you.
-                                Join premium to get access to a range of freelance jobs to start earning as a
-                                developer now.</h2>
-                            <div className='middle'>
-                                <Link to='/Premium'>
-                                    <button className='btn btn-dark btn-lg'>Freelance now ➔
-                                    </button>
-                                </Link>
-                            </div>
-                        </div>
-                        <div className='col-xl'>
-                        <div id="carouselExampleControls" class="carousel slide container" data-ride="carousel">
+                    <div className='row'>
+
+                    <div className='col-lg'>
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <div className='landingCarousel'>
@@ -478,6 +467,20 @@ function Landing() {
                             </a>
                         </div>
                     </div>
+
+                        <div className='col-lg indexText'>
+                            <h1 className='text-light'>Begin your developer freelance journey with us, today.</h1>
+                            <h2 className='text-light'>Getting experience is difficult, so we do it for you.
+                                Join premium to get access to a range of freelance jobs to start earning as a
+                                developer now.</h2>
+                            <div className='middle'>
+                                <Link to='/Premium'>
+                                    <button className='btn btn-dark btn-lg'>Freelance now ➔
+                                    </button>
+                                </Link>
+                            </div>
+                        </div>
+                        
                 </div>
 
             </div>

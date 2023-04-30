@@ -13,6 +13,7 @@ import Account from './routes/Account/Account';
 import Signup from './routes/Signup/Signup';
 import AdminControl from './routes/Admin/AdminControl';
 import Waiting from './routes/Waiting/Waiting';
+import Payements from './routes/Payments/Payements';
 
 //Redux
 import {Provider} from 'react-redux';
@@ -31,6 +32,7 @@ root.render(
                     <Route path='/Signup' element={< Signup />}/>
                     <Route path='/Admin/Control' element={< AdminControl />}/>
                     <Route path='/Waiting' element={< Waiting />}/>
+                    <Route path='/Payments' element={< Payements />}/>
                 </Routes>
             </ScrollToTop>
 

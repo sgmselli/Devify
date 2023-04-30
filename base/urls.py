@@ -20,5 +20,7 @@ urlpatterns = [
 
     path('hire/create/', views.createHire, name='createHire'),
     path('admin/hire/get/', views.getHires, name='getHires'),
-    path('click/', views.premiumClick, name='click')
+    path('click/', views.premiumClick, name='click'),
+
+    path('stripe/create-checkout-session/<str:pk>', views.create_checkout_session),
 ]

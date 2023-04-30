@@ -3,7 +3,9 @@ import {Link} from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
 import './Premium.css'
 import Layout from '../../Layout/Layout';
+
 import { premiumClick } from '../../features/userActions';
+import { checkout } from '../../features/paymentAction';
 
 function Premium() {
 
@@ -21,9 +23,15 @@ function Premium() {
             dispatch(premiumClick({
                 'user': userInfo.username
             }))
-            
         }
-        
+    }
+
+    const navCheckout = (planCode) => {
+        if (userInfo) {
+            dispatch(checkout({
+                'plan': planCode
+            }))
+        }
     }
 
     return (
@@ -101,35 +109,26 @@ function Premium() {
                             <tr>
                                 <td>
                                     <div className='buttonRow'>
-                                        <Link
-                                            to={userInfo
-                                            ? '/Waiting'
-                                            : '/Login'}>
-                                            <button onClick={notifyClick} className='btn btn-info btn-md'>Enroll now</button>
-                                        </Link>
-
+                                       
+                                        <form action="http://127.0.0.1:8000/api/stripe/create-checkout-session/price_1N1Z2UHFK31xUDPSG3Gw3p2N" method="POST">
+                                            <button onClick={notifyClick} className='btn btn-info btn-md' type='submit'>Enroll now</button>
+                                        </form>
                                     </div>
 
                                 </td>
                                 <td >
                                     <div className='buttonRow'>
-                                        <Link
-                                            to={userInfo
-                                            ? '/Waiting'
-                                            : '/Login'}>
-                                            <button onClick={notifyClick} className='btn btn-info btn-md'>Enroll now</button>
-                                        </Link>
+                                        <form action="http://127.0.0.1:8000/api/stripe/create-checkout-session/price_1N1Z34HFK31xUDPSQHecaF6n" method="POST">
+                                            <button onClick={notifyClick} className='btn btn-info btn-md' type='submit'>Enroll now</button>
+                                        </form>
 
                                     </div>
                                 </td>
                                 <td >
                                     <div className='buttonRow'>
-                                        <Link
-                                            to={userInfo
-                                            ? '/Waiting'
-                                            : '/Login'}>
-                                            <button onClick={notifyClick} className='btn btn-info btn-md'>Enroll now</button>
-                                        </Link>
+                                        <form action="http://127.0.0.1:8000/api/stripe/create-checkout-session/price_1N1r5xHFK31xUDPS990cpORv" method="POST">
+                                            <button onClick={notifyClick} className='btn btn-info btn-md' type='submit'>Enroll now</button>
+                                        </form>
 
                                     </div>
                                 </td>
@@ -168,13 +167,9 @@ function Premium() {
                             <tr>
                                 <td>
                                     <div className='buttonRow'>
-                                        <Link
-                                           
-                                            to={userInfo
-                                            ? '/Waiting'
-                                            : '/Login'}>
-                                            <button onClick={notifyClick} className='btn btn-info btn-lg'>Enroll now</button>
-                                        </Link>
+                                    <form action="http://127.0.0.1:8000/api/stripe/create-checkout-session/price_1N1Z2UHFK31xUDPSG3Gw3p2N" method="POST">
+                                            <button onClick={notifyClick} className='btn btn-info btn-md' type='submit'>Enroll now</button>
+                                        </form>
 
                                     </div>
 
@@ -214,13 +209,9 @@ function Premium() {
                             <tr>
                                 <td >
                                     <div className='buttonRow'>
-                                        <Link
-                                            
-                                            to={userInfo
-                                            ? '/Waiting'
-                                            : '/Login'}>
-                                            <button onClick={notifyClick} className='btn btn-info btn-lg'>Enroll now</button>
-                                        </Link>
+                                    <form action="http://127.0.0.1:8000/api/stripe/create-checkout-session/price_1N1Z34HFK31xUDPSQHecaF6n" method="POST">
+                                            <button onClick={notifyClick} className='btn btn-info btn-md' type='submit'>Enroll now</button>
+                                        </form>
 
                                     </div>
                                 </td>
@@ -257,12 +248,9 @@ function Premium() {
 
                             <td >
                                 <div className='buttonRow'>
-                                    <Link
-                                        to={userInfo
-                                        ? '/Waiting'
-                                        : '/Login'}>
-                                        <button onClick={notifyClick} className='btn btn-info btn-lg'>Enroll now</button>
-                                    </Link>
+                                <form action="http://127.0.0.1:8000/api/stripe/create-checkout-session/price_1N1Z3QHFK31xUDPSC9T1ZGhi" method="POST">
+                                            <button onClick={notifyClick} className='btn btn-info btn-md' type='submit'>Enroll now</button>
+                                        </form>
 
                                 </div>
                             </td>

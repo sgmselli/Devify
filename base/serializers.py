@@ -48,3 +48,8 @@ class ClicksSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Clicks
         fields = '__all__'
+    
+class PremiumSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Premium
+        fields = '__all__'

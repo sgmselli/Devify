@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
@@ -172,11 +172,44 @@ def getTutorBookings(request):
 
 @api_view(['POST'])
 def premiumClick(request):
-    data = request.data
-
     click = Clicks.objects.create(
         user = data['user']
     )
 
     serializer = serializers.ClicksSerializer(click, many=False)
     return Response(serializer.data)
+
+#Payements
+import stripe
+# This is your test secret API key.
+stripe.api_key = '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'
+
+@api_view(['POST'])
+def create_checkout_session(request, pk):
+    try:
+        checkout_session = stripe.checkout.Session.create(
+            line_items=[
+                {
+                    # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+                    'price': pk,
+                    'quantity': 1,
+                },
+            ],
+            mode='subscription',
+            payment_method_types=[
+            'card',
+            ],
+            success_url='http://127.0.0.1:8000/' + '?success=true&session_id={CHECKOUT_SESSION_ID}',
+            cancel_url='http://127.0.0.1:8000/' + '?canceled=true',
+            automatic_tax={'enabled': True},
+        )
+
+        return redirect(checkout_session.url)
+    
+    except:
+        return Response({
+            'error':'payement failed'
+            })
+
+    
+

@@ -5,6 +5,9 @@ from django.dispatch import receiver
 import json
 import datetime 
 
+class Premium(models.Model):
+    user = models.CharField(max_length=100, default=None)
+
 class Clicks(models.Model):
     _id = models.AutoField(editable=False, primary_key=True)
     user = models.CharField(max_length=100, default=None )

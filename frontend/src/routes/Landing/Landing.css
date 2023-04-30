@@ -444,7 +444,6 @@ button:hover b {
     background-color: #5F9EA0;
     display: flex;
     justify-content: center;
-    padding:8rem 0 3rem 0;
 }
 
 .freelanceIndex .row {
@@ -553,6 +552,11 @@ button:hover b {
     }
     .example img {
         max-width: 28rem;
+    }
+    
+    .freelanceIndex {
+        padding-top:8rem;
+        padding-bottom: 3rem;
     }
 
 }
