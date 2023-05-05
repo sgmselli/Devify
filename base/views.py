@@ -192,7 +192,7 @@ import stripe
 import os
 
 # This is your test secret API key.
-stripe.api_key = os.getenv('STRIPE_KEY') 
+stripe.api_key = os.environ.get('STRIPE_KEY') 
 endpoint_secret = os.getenv('WEBHOOK_KEY') 
 
 @api_view(['POST'])
