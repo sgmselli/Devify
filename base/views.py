@@ -192,8 +192,8 @@ import stripe
 import os
 
 # This is your test secret API key.
-stripe.api_key = os.getenv('STRIPE_KEY') 
-endpoint_secret = os.getenv('WEBHOOK_KEY') 
+stripe.api_key = 'sk_test_51MvkiVHFK31xUDPSMcyNPXtoGUP3RNB1gqhBrP6en9jDGFXeWi1BfxsNzAD3Cq88DWgPEjsUPTFUZ8zTgG0CKDuB00BaW6I4hx' #os.getenv('STRIPE_KEY') 
+endpoint_secret = 'whsec_b7f94abf839c8b8c1d5db8567f3f9b0d2f804d1be346f050b89f1fd75261c79e' #os.getenv('WEBHOOK_KEY') 
 
 @api_view(['POST'])
 def create_checkout_session(request, pk):
