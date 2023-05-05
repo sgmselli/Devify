@@ -1,15 +1,17 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.core.mail import send_mail
+from django.contrib.auth.hashers import make_password
+from django.contrib.auth.models import User
+
+from . import serializers
+from .models import Freelance, Hire, Tutoring, Clicks, Premium
+
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
 from rest_framework import status
-from django.core.mail import send_mail
-from django.contrib.auth.hashers import make_password
-from django.contrib.auth.models import User
-from . import serializers
-from .models import Freelance, Hire, Tutoring, Clicks
-
-
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 
@@ -60,7 +62,6 @@ def updateUser(request):
     user.save()
 
     return Response(serializer.data)
-
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
@@ -172,6 +173,7 @@ def getTutorBookings(request):
 
 @api_view(['POST'])
 def premiumClick(request):
+    data = request.data
     click = Clicks.objects.create(
         user = data['user']
     )
@@ -179,26 +181,38 @@ def premiumClick(request):
     serializer = serializers.ClicksSerializer(click, many=False)
     return Response(serializer.data)
 
+@api_view(['GET'])
+def getPremiumAccounts(request):
+    premium_accounts = Premium.objects.all()
+    serializer = serializers.PremiumSerializer(premium_accounts, many=True)
+    return Response(serializer.data)
+
 #Payements
 import stripe
+import os
+
 # This is your test secret API key.
-stripe.api_key = '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'
+stripe.api_key = os.environ.get('STRIPE_KEY') 
+endpoint_secret = os.environ.get('WEBHOOK_KEY') 
 
 @api_view(['POST'])
 def create_checkout_session(request, pk):
+
+    product = pk[pk.index('$')+1:]
+    email = pk[:pk.index('$')]
+    print(product)
+
     try:
         checkout_session = stripe.checkout.Session.create(
             line_items=[
                 {
                     # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-                    'price': pk,
+                    'price': product,
                     'quantity': 1,
                 },
             ],
             mode='subscription',
-            payment_method_types=[
-            'card',
-            ],
+            customer_email= email,
             success_url='http://127.0.0.1:8000/' + '?success=true&session_id={CHECKOUT_SESSION_ID}',
             cancel_url='http://127.0.0.1:8000/' + '?canceled=true',
             automatic_tax={'enabled': True},
@@ -211,5 +225,39 @@ def create_checkout_session(request, pk):
             'error':'payement failed'
             })
 
+@csrf_exempt
+def stripe_webhook(request):
+  payload = request.body
+  sig_header = request.META['HTTP_STRIPE_SIGNATURE']
+  event = None
+
+  try:
+    event = stripe.Webhook.construct_event(
+      payload, sig_header, endpoint_secret
+    )
+  except ValueError as e:
+    # Invalid payload
+    return HttpResponse(status=400)
+  except stripe.error.SignatureVerificationError as e:
+    # Invalid signature
+    return HttpResponse(status=400)
+
+  # Handle the checkout.session.completed event
+  if event['type'] == 'checkout.session.completed':
+    # Retrieve the session. If you require line items in the response, you may include them by expanding line_items.
+    session = stripe.checkout.Session.retrieve(
+      event['data']['object']['id'],
+      expand=['line_items'],
+    )
     
+    create_premium(session['customer_details']['email'])
+
+  return HttpResponse(status=200)
+
+def create_premium(user):
+    premium = Premium.objects.create(
+        user = user
+    )
+    serializer = serializers.PremiumSerializer(premium, many=False)
+    return Response(serializer.data)
 

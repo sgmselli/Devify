@@ -55,7 +55,6 @@ function Landing() {
         handleClick()
     }
 
-
     return (
         <Layout>
             <div className='Landing'>
@@ -72,13 +71,13 @@ function Landing() {
 
                                 {userInfo
                                     ? <Link to="/Account">
-                                            <button className='btn btn-md btn-dark'>{(userInfo.name).split(' ')[0].charAt(0).toUpperCase()+(userInfo.name).split(' ')[0].slice(1)}
+                                            <button className='btn btn-md btn-dark'>{(userInfo.name).split(' ')[0].charAt(0).toUpperCase() + (userInfo.name).split(' ')[0].slice(1)}
                                                 👋</button>
                                         </Link>
                                     : <Link to="/Login">
                                         <button className='btn btn-md btn-dark'>Login</button>
                                     </Link>
-                                }
+}
                                 <Link to="/Premium">
                                     <button className='btn btn-md btn-outline-dark'>Premium
                                     </button>
@@ -205,7 +204,8 @@ function Landing() {
                 <div className='premiumSection container-fluid'>
                     <div className="premiumHeading">
                         <h1>Become a developer now with premium</h1>
-                        <h2>Sign up to premium now from just <u>£29.99/month</u>, with a range of tiers covering all skill levels.</h2>
+                        <h2>Sign up to premium now from just
+                            <u>£29.99/month</u>, with a range of tiers covering all skill levels.</h2>
                     </div>
 
                     <div className='premiumBody row'>
@@ -326,9 +326,9 @@ function Landing() {
                                     </div>
                                 </div>
 
-                               </div>
+                            </div>
 
-                           </div>
+                        </div>
                     </div>
 
                     <div className='tutorContact container-fluid'>
@@ -407,66 +407,92 @@ function Landing() {
                 <div className='freelanceIndex'>
                     <div className='row'>
 
-                    <div className='col-lg'>
-                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div className='landingCarousel'>
-                                        <Link to='/Premium'
-                                            style={{ textDecoration: 'none'}}>
-                                        <div className='freelanceCard bg-dark'>
+                        <div className='col-lg'>
+                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div className='landingCarousel'>
+                                            <Link
+                                                to='/Premium'
+                                                style={{
+                                                textDecoration: 'none'
+                                            }}>
+                                                <div className='freelanceCard bg-dark'>
+                                                    <h6>Caesar cipher</h6>
+                                                    <p>Brief: A student would like a Caesar cipher build for their past assignment.
+                                                        This needs to be build in Java, so Java knowledge is needed. Also, provide
+                                                        comments clearly explaining code. Images of assignment will be sent after
+                                                        assignment.
+                                                    </p>
+                                                    <p>Client: A UoL CS student</p>
+                                                    <p>Due: Before start of June</p>
+                                                    <p>Earnings: £15</p>
+                                                    <button type='submit' className='btn btn-md btn-info'>Apply</button>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div className='landingCarousel'>
+                                            <Link
+                                                to='/Premium'
+                                                style={{
+                                                textDecoration: 'none'
+                                            }}>
+                                                <div className='freelanceCard bg-dark'>
 
-                                                <h6>1</h6>
-                                                <p>Brief: </p>
-                                                <p>Client:</p>
-                                                <p>Due: </p>
-                                                <p>Earnings: £</p>
-                                                <button type='submit' className='btn btn-md btn-info'>Apply</button>    
+                                                    <h6>Portfolio site</h6>
+                                                    <p>Brief: Create a basic portfolio site for a student that will include multiple
+                                                        pages including landing, education, projects, and a contact. All details and
+                                                        images will be provided after assignment.
+                                                    </p>
+                                                    <p>Client: Client details after assignment</p>
+                                                    <p>Due: N/A</p>
+                                                    <p>Earnings: £25</p>
+                                                    <button type='submit' className='btn btn-md btn-info'>Apply</button>
+                                                </div>
+                                            </Link>
                                         </div>
-                                        </Link>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div className='landingCarousel'>
+                                            <Link
+                                                to='/Premium'
+                                                style={{
+                                                textDecoration: 'none'
+                                            }}>
+                                                <div className='freelanceCard bg-dark'>
+                                                    <h6>Django employee site</h6>
+                                                    <p>Brief: A student from India would like a multi-authorisation site for admin and employees in Django, no styling needed. Admin can create new employees, whereas employees can only view the table of employees. More details provided after assignment.
+                                                    </p>
+                                                    <p>Client: IIoTB Student</p>
+                                                    <p>Due: 18th May 2023
+                                                    </p>
+                                                    <p>Earnings: £22</p>
+                                                    <button type='submit' className='btn btn-md btn-info'>Apply</button>
+                                                </div>
+                                            </Link>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="carousel-item">
-                                    <div className='landingCarousel'>
-                                        <Link to='/Premium'
-                                            style={{ textDecoration: 'none'}}>
-                                        <div className='freelanceCard bg-dark'>
-                                                <h6>2</h6>
-                                                <p>Brief: </p>
-                                                <p>Client:</p>
-                                                <p>Due: </p>
-                                                <p>Earnings: £</p>
-                                                <button type='submit' className='btn btn-md btn-info'>Apply</button>
-                                        </div>
-                                        </Link>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div className='landingCarousel'>
-                                        <Link to='/Premium'
-                                            style={{ textDecoration: 'none'}}>
-                                        <div className='freelanceCard bg-dark'>
-                                                <h6>3</h6>
-                                                <p>Brief: </p>
-                                                <p>Client:</p>
-                                                <p>Due: </p>
-                                                <p>Earnings: £</p>
-                                                <button type='submit' className='btn btn-md btn-info'>Apply</button>   
-                                        </div>
-                                        </Link>
-                                    </div>
-                                </div>
+                                <a
+                                    class="carousel-control-prev"
+                                    href="#carouselExampleControls"
+                                    role="button"
+                                    data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a
+                                    class="carousel-control-next"
+                                    href="#carouselExampleControls"
+                                    role="button"
+                                    data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
                             </div>
-                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
                         </div>
-                    </div>
 
                         <div className='col-lg indexText'>
                             <h1 className='text-light'>Begin your developer freelance journey with us, today.</h1>
@@ -480,16 +506,14 @@ function Landing() {
                                 </Link>
                             </div>
                         </div>
-                        
+
+                    </div>
+
                 </div>
 
+                <Hire/>
+
             </div>
-                
-                
-
-            <Hire/>
-
-        </div>
         </Layout>
     )
 }

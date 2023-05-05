@@ -74,3 +74,16 @@ export const userProfilesReducer = (state = {profiles: []}, action) => {
             return state
     }
 }
+
+export const premiumAccountsReducer = (state = {premiumAccounts: []}, action) => {
+    switch (action.type) {
+        case 'PREMIUM_LIST_REQUEST':
+            return { premiumAccounts: [] }
+        case 'PREMIUM_LIST_SUCCESS':
+            return { premiumAccounts: action.payload}
+        case 'PREMIUM_LIST_FAIL':
+            return { error: action.payload }
+        default: 
+            return state
+    }
+}

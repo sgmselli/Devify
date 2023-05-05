@@ -232,3 +232,36 @@ export const premiumClick = (user) => async (dispatch) => {
         })
     }
 }
+
+export const getPremiumAccounts = () => async (dispatch) => {
+    try {
+        dispatch({
+            type: 'PREMIUM_LIST_REQUEST'
+        })
+
+        const config = {
+            headers:{
+                'Content-type':'application/json'
+            },
+        }
+
+        const {data} = await axios.get(
+            '/api/users/premium/',
+            config
+        )
+
+        dispatch({
+            type:'PREMIUM_LIST_SUCCESS',
+            payload:data
+        })
+        
+    } catch (error) {
+        dispatch({
+            type: 'PREMIUM_LIST_FAIL',
+            payload: error.response && error.response.data.message
+                ? error.response.data.message
+                : error.message
+        })
+
+    }
+}

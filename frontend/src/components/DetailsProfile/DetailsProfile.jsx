@@ -1,6 +1,6 @@
 import {React, useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {update, details} from '../../features/userActions'
+import {update, details, getPremiumAccounts} from '../../features/userActions'
 import {Link} from 'react-router-dom';
 import {logout} from '../../features/userActions'
 
@@ -24,6 +24,16 @@ function DetailsProfile() {
 
     const userUpdate = useSelector(state => state.userUpdate)
     const {loading, error, userUpdated} = userUpdate
+
+    //Load in premium accounts
+    const premiumList = useSelector(state => state.premiumAccounts)
+    const { premiumAccounts } = premiumList;
+
+    const premiums = premiumAccounts.map((account) => account.user)
+
+    useEffect(() => {
+        dispatch(getPremiumAccounts());
+    }, [dispatch])
 
     useEffect(() => {
         if (userInfo) {
@@ -113,9 +123,13 @@ function DetailsProfile() {
                         <h1>Your Premium.</h1>
                     </div>
 
+                    
                     <div className='premiumButtons'>
-                        <button className='btn btn-info btn-md'>
-                            Get premium</button>
+                        <Link to='/Premium'>
+                            <button className='btn btn-info btn-md'>
+                                {premiums.includes(userInfo.username) ? "Change plan" : "Get premium"}
+                            </button>
+                        </Link>
                     </div>
 
                 </div>

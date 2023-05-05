@@ -1,7 +1,7 @@
 export const newTutorClientReducer = (state = {}, action) => {
     switch (action.type) {
         case 'NEW_TUTOR_REQUEST':
-            return { loading: true, freelances: []}
+            return { loading: true, tutoring: []}
         case 'NEW_TUTOR_SUCCESS':
             return { loading: false, tutoring: action.payload}
         case 'NEW_TUTOR_FAIL':

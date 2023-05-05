@@ -27,11 +27,11 @@ export const freelanceCreateReducer = (state = {}, action) => {
 export const freelanceUpdateReducer = (state = {}, action) => {
     switch (action.type) {
         case 'FREELANCE_UPDATE_REQUEST':
-            return { loading: true, freelanceUpdate: []}
+            return { loadingApply: true, freelanceUpdate: []}
         case 'FREELANCE_UPDATE_SUCCESS':
-            return { loading: false, freelanceUpdate: action.payload}
+            return { loadingApply: false, freelanceUpdate: action.payload}
         case 'FREELANCE_UPDATE_FAIL':
-            return { loading: false, error: action.payload }
+            return { loadingApply: false, errorApply: action.payload }
         default: 
             return state
     }

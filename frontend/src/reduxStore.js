@@ -2,7 +2,7 @@ import {configureStore} from '@reduxjs/toolkit';
 import {freelanceReducer, freelanceCreateReducer, freelanceUpdateReducer} from './features/freelanceReducer';
 import {createHireReducer} from './features/hireReducer';
 import {newTutorClientReducer, tutorListReducer} from './features/tutorReducer';
-import {userReducer, registerReducer, detailsReducer, userUpdateReducer, userProfilesReducer} from './features/userReducers';
+import {userReducer, registerReducer, detailsReducer, userUpdateReducer, userProfilesReducer, premiumAccountsReducer} from './features/userReducers';
 
 const userInfoFromStorage = localStorage.getItem('userInfo') ?
     JSON.parse(localStorage.getItem('userInfo')) : null
@@ -18,6 +18,7 @@ const store = configureStore({
         freelanceCompleted: freelanceUpdateReducer,
         freelanceAssign:freelanceUpdateReducer,
         freelancesApply: freelanceUpdateReducer,
+        premiumAccounts: premiumAccountsReducer,
         userLogin: userReducer,
         userRegister: registerReducer,
         userDetails: detailsReducer,

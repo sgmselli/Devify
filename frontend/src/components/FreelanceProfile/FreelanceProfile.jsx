@@ -1,16 +1,19 @@
 import {React, useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {Link} from 'react-router-dom';
-import {listFreelances, freelanceApply} from '../../features/freelanceAction';
+import { useNavigate } from 'react-router-dom';
+import {listFreelances} from '../../features/freelanceAction';
+import {freelanceApply} from '../../features/freelanceAction';
+import { getPremiumAccounts } from '../../features/userActions';
 
 import './FreelanceProfile.css'
 
 function FreelanceProfile() {
 
     //Current screen width
-    const windowSize = window.innerWidth;    
+    const windowSize = window.innerWidth;   
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     //Current logged in user details
     const userLogin = useSelector(state => state.userLogin)
@@ -20,41 +23,57 @@ function FreelanceProfile() {
     const freelanceList = useSelector(state => state.freelances)
     const {error, loading, freelances} = freelanceList;
 
+    //Load in premium accounts
+    const premiumList = useSelector(state => state.premiumAccounts)
+    const { premiumAccounts } = premiumList;
+
+    const premiums = premiumAccounts.map((account) => account.user)
+
     //SArrange freelance jobs into whether they're available, taken, or completed
     const availableFreelances = freelances.filter((ticket) => ticket.completed == false && ticket.user == '');
     const currentFreelances = freelances.filter((ticket) => ticket.completed == false && ticket.user == userInfo.username);
     const pastFreelances = freelances.filter((ticket) => ticket.completed == true && ticket.user == userInfo.username);
 
-    //Send application of user's name with the freelance job to DB
-    const handleClickApply = (id) => (e) => {
-        e.preventDefault()
-        dispatch(freelanceApply(id, {'application': userInfo.username}))
-    }
-
     // Returns the button needed for the type of freelance card, whether an
     // available, current, or past
-    const displayButton = (type) => {
-        const buttonEle = document.createElement('button')
-
+    const displayButton = (type, id) => {
         //For available tickets
+
         if (type == 'availableFreelance') {
+            const buttonEle = document.createElement('button');
+            
             buttonEle
                 .classList
                 .add('btn', 'btn-sm', 'btn-dark')
-            buttonEle.onclick = handleClickApply
+                
             buttonEle.append('Apply')
 
+            //Send application of user's name with the freelance job to DB
+            const handleClickApply = (e) => {
+                e.preventDefault()
+                console.log(premiums)
+                if (premiums.includes(userInfo.username)) {
+                    dispatch(freelanceApply(id, {'application': userInfo.username}))
+                    alert('Job application successful')
+                } else {
+                    navigate('/Premium')
+                    alert('To access freelance jobs today, join premium. Have a look at our high value plans!')
+                }
+            }
+
+            buttonEle.addEventListener("click", handleClickApply)
             return buttonEle
 
             //for currently taken tickets
         } else if (type == 'currentFreelance') {
-            buttonEle
-                .classList
-                .add('btn', 'btn-sm', 'btn-info')
-            buttonEle.href = 'mailto:devify@outlook.com'
-            buttonEle.append('Upload zip to devify@outlook.com')
+            const a = document.createElement('a');
+            a.setAttribute("href", 'mailto:devify@outlook.com');
+            const mail = document.createElement('button');
+            mail.append('Upload zip to devify@outlook.com');
+            mail.classList.add('btn', 'btn-sm', 'btn-info');
+            a.append(mail)
 
-            return buttonEle
+            return a
 
             //No button needed for past tickets
         } else {
@@ -63,7 +82,7 @@ function FreelanceProfile() {
     }
 
     //Displays the ticket information
-    const displayTicket = (title, des, client, due, earnings, type, colour) => {
+    const displayTicket = (title, des, client, due, earnings, type, colour, id) => {
         
         const card = document.createElement('div')
         card
@@ -80,7 +99,7 @@ function FreelanceProfile() {
         dueEle.append('Due: '+due)
         const earningsEle = document.createElement('p')
         earningsEle.append('Earnings: £'+earnings)
-        const buttonEle = displayButton(type);
+        const buttonEle = displayButton(type, id);
 
         card.append(titleEle, briefEle, clientEle, dueEle, earningsEle, buttonEle)
 
@@ -125,19 +144,15 @@ function FreelanceProfile() {
                 .classList
                 .add('active');
             }
-
-
-
             if (i <= len - 1) {
                 const ticket1 = ticket[i];
-                const card = displayTicket(ticket1.title, ticket1.description, ticket1.client, ticket1.dueDate, ticket1.price, ticketType, colour);
+                const card = displayTicket(ticket1.title, ticket1.description, ticket1.client, ticket1.dueDate, ticket1.price, ticketType, colour, ticket1._id);
                 display.append(card);
-
             }
             if (windowSize > 800) {
                 if (i + 1 <= len - 1) {
                     const ticket2 = ticket[i + 1];
-                    const card = displayTicket(ticket2.title, ticket2.description, ticket2.client, ticket2.dueDate, ticket2.price, ticketType, colour);
+                    const card = displayTicket(ticket2.title, ticket2.description, ticket2.client, ticket2.dueDate, ticket2.price, ticketType, colour, ticket2._id);
                     display.append(card);
                 }
                 ticketsPerSlide = 2;
@@ -145,7 +160,7 @@ function FreelanceProfile() {
             if (windowSize > 1100) {
                 if (i + 2 <= len - 1) {
                     const ticket3 = ticket[i + 2];
-                    const card = displayTicket(ticket3.title, ticket3.description, ticket3.client, ticket3.dueDate, ticket3.price, ticketType, colour);
+                    const card = displayTicket(ticket3.title, ticket3.description, ticket3.client, ticket3.dueDate, ticket3.price, ticketType, colour, ticket3._id);
                     display.append(card);
                 }
                 ticketsPerSlide = 3;
@@ -155,12 +170,11 @@ function FreelanceProfile() {
             c.append(item);
             i += ticketsPerSlide;
         }
-
     }
 
     useEffect(() => {
         dispatch(listFreelances());
-        
+        dispatch(getPremiumAccounts());
     }, [dispatch])
 
     useEffect(() => {

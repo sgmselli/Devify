@@ -5,9 +5,6 @@ from django.dispatch import receiver
 import json
 import datetime 
 
-class Premium(models.Model):
-    user = models.CharField(max_length=100, default=None)
-
 class Clicks(models.Model):
     _id = models.AutoField(editable=False, primary_key=True)
     user = models.CharField(max_length=100, default=None )
@@ -17,9 +14,6 @@ class Clicks(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-
-    premium = models.BooleanField(default=False)
-    tele = models.CharField(max_length=100, default='')
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
@@ -64,8 +58,7 @@ class Order(models.Model):
 
 
 class Premium(models.Model):
-    user = models.CharField(max_length=100)
-    monthDate = models.CharField(max_length=100)
+    user = models.CharField(max_length=100, primary_key=True)
 
 class Hire(models.Model):
     name = models.CharField(max_length=100, default=None)
