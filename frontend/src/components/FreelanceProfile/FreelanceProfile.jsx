@@ -9,6 +9,8 @@ import './FreelanceProfile.css'
 
 function FreelanceProfile() {
 
+    const [premiums, setPremiums] = useState([])
+
     //Current screen width
     const windowSize = window.innerWidth;   
 
@@ -25,9 +27,7 @@ function FreelanceProfile() {
 
     //Load in premium accounts
     const premiumList = useSelector(state => state.premiumAccounts)
-    const { premiumAccounts } = premiumList;
-
-    const premiums = premiumAccounts.map((account) => account.user)
+    const { premiumAccounts } = premiumList
 
     //SArrange freelance jobs into whether they're available, taken, or completed
     const availableFreelances = freelances.filter((ticket) => ticket.completed == false && ticket.user == '');
@@ -176,6 +176,10 @@ function FreelanceProfile() {
         dispatch(listFreelances());
         dispatch(getPremiumAccounts());
     }, [dispatch])
+
+    useEffect(() => {
+        setPremiums(premiumAccounts.map((account) => account.user))
+    }, [premiumAccounts])
 
     useEffect(() => {
 
