@@ -419,10 +419,7 @@ function Landing() {
                                             }}>
                                                 <div className='freelanceCard bg-dark'>
                                                     <h6>Caesar cipher</h6>
-                                                    <p>Brief: A student would like a Caesar cipher build for their past assignment.
-                                                        This needs to be build in Java, so Java knowledge is needed. Also, provide
-                                                        comments clearly explaining code. Images of assignment will be sent after
-                                                        assignment.
+                                                    <p>Brief: A student would like a Caesar cipher build for their past assignment. This needs to be build in Java, so Java knowledge is needed. Also, provide comments clearly explaining code. Images of assignment will be sent after assignment.
                                                     </p>
                                                     <p>Client: A UoL CS student</p>
                                                     <p>Due: Before start of June</p>
@@ -442,9 +439,7 @@ function Landing() {
                                                 <div className='freelanceCard bg-dark'>
 
                                                     <h6>Portfolio site</h6>
-                                                    <p>Brief: Create a basic portfolio site for a student that will include multiple
-                                                        pages including landing, education, projects, and a contact. All details and
-                                                        images will be provided after assignment.
+                                                    <p>Brief: Create a basic portfolio site for a student that will include multiple pages including landing, education, projects, and a contact. All details and images will be provided after assignment.
                                                     </p>
                                                     <p>Client: Client details after assignment</p>
                                                     <p>Due: N/A</p>
@@ -463,10 +458,10 @@ function Landing() {
                                             }}>
                                                 <div className='freelanceCard bg-dark'>
                                                     <h6>Django employee site</h6>
-                                                    <p>Brief: A student from India would like a multi-authorisation site for admin and employees in Django, no styling needed. Admin can create new employees, whereas employees can only view the table of employees. More details provided after assignment.
+                                                    <p>Brief: A student, living in India, would like a multi-authorisation site for admin and employees in Django, no styling needed. Admin can create new employees, whereas employees can only view the table of employees. More details provided after assignment.
                                                     </p>
                                                     <p>Client: IIoTB Student</p>
-                                                    <p>Due: 18th May 2023
+                                                    <p>Due: 18-05-2023
                                                     </p>
                                                     <p>Earnings: £22</p>
                                                     <button type='submit' className='btn btn-md btn-info'>Apply</button>
