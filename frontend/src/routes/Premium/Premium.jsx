@@ -194,9 +194,19 @@ function Premium() {
                             <tr>
                                 <td>
                                     <div className='buttonRow'>
-                                    <form action="http://127.0.0.1:8000/api/stripe/create-checkout-session/price_1N1Z2UHFK31xUDPSG3Gw3p2N" method="POST">
-                                            <button onClick={notifyClick} className='btn btn-info btn-md' type='submit'>Enroll now</button>
-                                        </form>
+                                    {userInfo ?
+
+                                    <form action={`https://www.devifyuk.com/api/stripe/create-checkout-session/${userInfo.username}$price_1N1Z2UHFK31xUDPSG3Gw3p2N`} method="POST">
+                                        <button onClick={notifyClick} className='btn btn-info btn-md' type='submit'>Enroll now</button>
+                                    </form>
+
+                                    :
+
+                                    <Link to='/Login'>
+                                        <button onClick={notifyClick} className='btn btn-info btn-md' type='submit'>Enroll now</button>
+                                    </Link>
+
+                                    }
 
                                     </div>
 
@@ -236,9 +246,19 @@ function Premium() {
                             <tr>
                                 <td >
                                     <div className='buttonRow'>
-                                    <form action="http://localhost:8000/api/stripe/create-checkout-session/price_1N1Z34HFK31xUDPSQHecaF6n" method="POST">
-                                            <button onClick={notifyClick} className='btn btn-info btn-md' type='submit'>Enroll now</button>
-                                        </form>
+                                    {userInfo ?
+
+                                <form action={`https://www.devifyuk.com/api/stripe/create-checkout-session/${userInfo.username}$price_1N1Z34HFK31xUDPSQHecaF6n`} method="POST">
+                                    <button onClick={notifyClick} className='btn btn-info btn-md' type='submit'>Enroll now</button>
+                                </form>
+
+                                :
+
+                                <Link to='/Login'>
+                                    <button onClick={notifyClick} className='btn btn-info btn-md' type='submit'>Enroll now</button>
+                                </Link>
+
+                                }
 
                                     </div>
                                 </td>
@@ -275,9 +295,19 @@ function Premium() {
 
                             <td >
                                 <div className='buttonRow'>
-                                <form action="http://127.0.0.1:8000/api/stripe/create-checkout-session/price_1N1Z3QHFK31xUDPSC9T1ZGhi" method="POST">
-                                            <button onClick={notifyClick} className='btn btn-info btn-md' type='submit'>Enroll now</button>
-                                        </form>
+                                {userInfo ?
+
+                                <form action={`https://www.devifyuk.com/api/stripe/create-checkout-session/${userInfo.username}$price_1N1r5xHFK31xUDPS990cpORv`}method="POST">
+                                    <button onClick={notifyClick} className='btn btn-info btn-md' type='submit'>Enroll now</button>
+                                </form>
+
+                                :
+
+                                <Link to='/Login'>
+                                    <button onClick={notifyClick} className='btn btn-info btn-md' type='submit'>Enroll now</button>
+                                </Link>
+
+                                }
 
                                 </div>
                             </td>

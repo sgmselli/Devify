@@ -2,7 +2,6 @@ import {React, useState, useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {createHire} from '../../features/hireAction';
 import './Hire.css'
-import Layout from '../../Layout/Layout';
 
 function Hire() {
 
@@ -22,7 +21,7 @@ function Hire() {
     const dispatch = useDispatch();
 
     const hireSelector = useSelector(state => state.hireCreate);
-    const {error, loading, hire} = hireSelector
+    const {error, hire} = hireSelector
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -82,25 +81,25 @@ function Hire() {
                 <div className='header'>
                     <h1>Get your project completed now 👨‍💻</h1>
                 </div>
-                {error && <div className='alert alert-danger'>There was an error with your application. Try again.</div> }
-                {hire && <div className='alert alert-success'>Your application was successful.</div> }
+                {error && <div className='alert alert-danger'>There was an error with your application</div> }
+                {hire && <div className='alert alert-success'>Your application was successful</div> }
                 <form onSubmit={submitHandler}>
                     <div class="row">
                         <div class="col">
-                            <input type="text" className="form-control" placeholder="Full name" onChange={(e) => setName(e.target.value)}/>
+                            <input type="text" className="form-control" placeholder="Full name" onChange={(e) => setName(e.target.value)} required/>
                         </div>
                     </div>
                     <div className='row'>
                         <div class="col">
-                            <input type="text" className="form-control" placeholder="Project name" onChange={(e) => setTitle(e.target.value)}/>
+                            <input type="text" className="form-control" placeholder="Project name" onChange={(e) => setTitle(e.target.value)} required/>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <input type="email" className="form-control" placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
+                            <input type="email" className="form-control" placeholder="Email" onChange={(e) => setEmail(e.target.value)} required/>
                         </div>
                         <div class="col">
-                            <input type="text" className="form-control" placeholder="Telephone" onChange={(e) => setTele(e.target.value)}/>
+                            <input type="text" className="form-control" placeholder="Telephone" onChange={(e) => setTele(e.target.value)} required/>
                         </div>
                     </div>
                     <div class="row">
@@ -109,11 +108,11 @@ function Hire() {
                         </div>
                     
                         <div class="col">
-                            <input type="date" id='date' className="form-control" placeholder='Desired completion date' min={today} onChange={(e) => setDate(e.target.value)} />
+                            <input type="date" id='date' className="form-control" placeholder='Desired completion date' min={today} onChange={(e) => setDate(e.target.value)} required />
                         </div>
                     </div>
                     <div>
-                        <textarea type="text" className="form-control" placeholder="Project details" onChange={(e) => setDescription(e.target.value)}/>
+                        <textarea type="text" className="form-control" placeholder="Project details" onChange={(e) => setDescription(e.target.value)} required/>
                     </div>
                     <div className='buttonMiddle'>
                         <button type="submit" className='btn btn-dark btn-lg'>Apply now</button>

@@ -1,7 +1,6 @@
 import {React} from 'react';
 
 import './Tutoring.css';
-import Layout from '../../Layout/Layout';
 
 function Tutoring() {
 

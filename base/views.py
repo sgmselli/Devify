@@ -48,23 +48,17 @@ def registerUser(request):
     
 @api_view(['PUT'])
 def updateUser(request):
-    user = request.user
-    serializer = serializers.UserSerializerWithToken(user, many=False)
-
     data = request.data
+    user = User.objects.get(id=data['id'])
+    serializer = serializers.UserSerializer(user, many=False)
     user.first_name = data['name']
-    user.username = data['email']
-    user.email = data['email']
-
     if data['password'] != '':
         user.password = make_password(data['password'])
-    
     user.save()
 
     return Response(serializer.data)
 
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
 def getUserProfile(request):
     user = request.user
     serializer = serializers.UserSerializer(user, many=False)
@@ -78,7 +72,6 @@ def getUsers(request):
     return Response(serializer.data)
 
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
 def getFreelances(request):
     freelances = Freelance.objects.all()
     serializer = serializers.FreelanceSerializer(freelances, many=True)

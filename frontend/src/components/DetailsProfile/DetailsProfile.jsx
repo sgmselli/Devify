@@ -13,10 +13,10 @@ function DetailsProfile() {
     //Update from fields
     const [name,
         setName] = useState('');
-    const [email,
-        setEmail] = useState('');
     const [password,
         setPassword] = useState('');
+    const [confirm, setConfirm] = useState('')
+    const [matchError, setMatch] = useState('')
 
     //Load in user details from DB
     const userLogin = useSelector(state => state.userLogin)
@@ -39,15 +39,19 @@ function DetailsProfile() {
         if (userInfo) {
             dispatch(details())
             setName(userInfo.name)
-            setEmail(userInfo.username)
-
         }
 
     }, [userInfo, dispatch])
 
     const submitHandler = (e) => {
         e.preventDefault();
-        dispatch(update({'name': name, 'email': email, 'password': password}));
+        
+        if (password === confirm) {
+            dispatch(update({'id': userInfo.id, 'name': name, 'password':password}));
+        } else {
+            setMatch('obj')
+           
+        }
     }
 
     const logoutHandler = () => {
@@ -61,8 +65,9 @@ function DetailsProfile() {
                     <h1>Your account.</h1>
                 </div>
 
-                {error && <div className='alert alert-danger'>Error with updating your details. Try again.</div>}
-                {userUpdated && <div className='alert alert-success'>Your details have been successfully updated.</div>}
+                {matchError && !userInfo && <div className='alert alert-danger'>Password inputs did not match</div> }
+                {error && <div className='alert alert-danger'>Error with updating your details</div>}
+                {userUpdated && <div className='alert alert-success'>Your details have been successfully updated</div>}
 
                 <div >
                     <form onSubmit={submitHandler}>
@@ -73,16 +78,7 @@ function DetailsProfile() {
                                 aria-describedby="fullname"
                                 placeholder="Full name"
                                 value={name}
-                                onChange={(e) => setName(e.target.value)}/>
-                        </div>
-                        <div class="form-group">
-                            <input
-                                type="email"
-                                class="form-control"
-                                aria-describedby="emailHelp"
-                                placeholder="Enter email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}/>
+                                onChange={(e) => setName(e.target.value)} required/>
                         </div>
                         <div class="form-group">
                             <input
@@ -90,14 +86,15 @@ function DetailsProfile() {
                                 class="form-control"
                                 aria-describedby="tele"
                                 placeholder="Change password"
-                                onChange={(e) => setPassword(e.target.value)}/>
+                                onChange={(e) => setPassword(e.target.value)} required/>
                         </div>
                         <div class="form-group">
                             <input
                                 type="text"
                                 class="form-control"
                                 aria-describedby="tele"
-                                placeholder="Confirm password"/>
+                                placeholder="Confirm changed password"
+                                onChange={(e) => setConfirm(e.target.value)} required/>
                         </div>
 
                         <div className='buttonMiddle'>

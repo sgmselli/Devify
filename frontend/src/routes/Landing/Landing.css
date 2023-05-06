@@ -500,6 +500,14 @@ button:hover b {
     align-items: center;
 }
 
+.alert {
+    font-family: Montserrat-VariableFont_wght_3;
+}
+
+textarea {
+    font-family: Montserrat-VariableFont_wght_3;
+}
+
 @media only screen and (max-width: 1400px) {
     .indexImage {
         display: none;

@@ -12,19 +12,6 @@ class Clicks(models.Model):
     def __str__(self):
         return self.user
 
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-
-@receiver(post_save, sender=User)
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.create(user=instance)
-        
-
-@receiver(post_save, sender=User)
-def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()
-
 class Freelance(models.Model):
     _id = models.AutoField(editable=False, primary_key=True)
     user = models.CharField(max_length=100, default=None)

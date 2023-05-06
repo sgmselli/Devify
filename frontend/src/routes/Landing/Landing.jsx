@@ -204,8 +204,7 @@ function Landing() {
                 <div className='premiumSection container-fluid'>
                     <div className="premiumHeading">
                         <h1>Become a developer now with premium</h1>
-                        <h2>Sign up to premium now from just
-                            <u>£29.99/month</u>, with a range of tiers covering all skill levels.</h2>
+                        <h2>Sign up to premium now from just <u>£29.99/month</u>, with a range of tiers covering all skill levels.</h2>
                     </div>
 
                     <div className='premiumBody row'>
@@ -340,15 +339,15 @@ function Landing() {
                             </div>
 
                             <form onSubmit={submitHandler} className='container'>
-                                {error && <div className='alert alert-danger'>There was an error with your application. Try again.</div>}
-                                {tutoring && <div className='alert alert-success'>Your application was successful.</div>}
+                                {error && <div className='alert alert-danger'>There was an error with your application</div>}
+                                {tutoring && <div className='alert alert-success'>Your application was successful</div>}
                                 <div class="row">
                                     <div class="col">
                                         <input
                                             type="text"
                                             class="form-control"
                                             placeholder="First name"
-                                            onChange={(e) => setFirst(e.target.value)}/>
+                                            onChange={(e) => setFirst(e.target.value)} required/>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -357,7 +356,7 @@ function Landing() {
                                             type="text"
                                             class="form-control"
                                             placeholder="Last name"
-                                            onChange={(e) => setLast(e.target.value)}/>
+                                            onChange={(e) => setLast(e.target.value)} required/>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -366,7 +365,7 @@ function Landing() {
                                             type="email"
                                             class="form-control"
                                             placeholder="Email"
-                                            onChange={(e) => setEmail(e.target.value)}/>
+                                            onChange={(e) => setEmail(e.target.value)} required/>
                                     </div>
                                 </div>
                                 <div className='row'>
@@ -375,16 +374,16 @@ function Landing() {
                                             type="text"
                                             class="form-control"
                                             placeholder="Telephone"
-                                            onChange={(e) => setTele(e.target.value)}/>
+                                            onChange={(e) => setTele(e.target.value)} required/>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
                                         <input
-                                            type="text"
+                                            type="number" min="0" step="1"
                                             class="form-control"
                                             placeholder="Sessions per week?"
-                                            onChange={(e) => setSessions(e.target.value)}/>
+                                            onChange={(e) => setSessions(e.target.value)} required/> 
                                     </div>
                                 </div>
                                 <div class="row">
@@ -394,7 +393,7 @@ function Landing() {
                                             class="form-control is-invalid"
                                             placeholder="Select course above"
                                             value={course}
-                                            readOnly/>
+                                            readOnly required/>
                                     </div>
                                 </div>
                                 <button type="submit" className='btn btn-dark btn-lg'>Apply now</button>

@@ -21,7 +21,7 @@ function Login() {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        dispatch(login(email,password))
+        dispatch(login(email.toLowerCase(),password))
     }
 
     //If logged in, dont allow access to login page
@@ -42,8 +42,8 @@ function Login() {
                     </div>
                     <div className='col'>
                         <h1>Log into myDevify.</h1>
-                        {error && <div className='alert alert-danger'>Username or password is incorrect.</div> }
-                        {userInfo && <div className='alert alert-success'>Login successful.</div> }
+                        {error && <div className='alert alert-danger'>Username or password is incorrect</div> }
+                        {userInfo && <div className='alert alert-success'>Login successful</div> }
                         <form onSubmit={submitHandler}>
                             <div class="form-group">
                                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"  onChange={(e) => setEmail(e.target.value)} required/>   

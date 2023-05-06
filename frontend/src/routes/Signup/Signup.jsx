@@ -1,4 +1,4 @@
-import {React, useState, useEffect } from 'react';
+import {React, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Layout from '../../Layout/Layout';
 import {Link} from 'react-router-dom';
@@ -19,8 +19,8 @@ function Signup() {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        if (password == confirm) {
-            dispatch(register(name, email, password));
+        if (password === confirm) {
+            dispatch(register(name, email.toLowerCase(), password));
         } else {
             setMatch('obj')
            
@@ -37,21 +37,21 @@ function Signup() {
                         <div className='col'>
 
                             <h1>Create a myDevify account.</h1>
-                            {matchError && !userInfo && <div className='alert alert-danger'>Password inputs did not match. Try again.</div> }
-                            {error && <div className='alert alert-danger'>Error with registration. Try again.</div> }
-                            {userInfo && <div className='alert alert-success'>Registration successful.</div> }
+                            {matchError && !userInfo && <div className='alert alert-danger'>Password inputs did not match</div> }
+                            {error && <div className='alert alert-danger'>Email already exists</div> }
+                            {userInfo && <div className='alert alert-success'>Registration successful</div> }
                             <form onSubmit={submitHandler}>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" aria-describedby="fullname" placeholder="Enter name" onChange={(e) => setName(e.target.value)}/>                                  
+                                    <input type="text" class="form-control" aria-describedby="fullname" placeholder="Enter name" onChange={(e) => setName(e.target.value)} required/>                                  
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)}/>                                  
+                                    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} required/>                                  
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
+                                    <input type="password" class="form-control" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Confirm Password" onChange={(e) => setConfirm(e.target.value)}/>
+                                    <input type="password" class="form-control" placeholder="Confirm Password" onChange={(e) => setConfirm(e.target.value)} required/>
                                     <small>Have an account? Log up <Link to='/Login'><u>here</u></Link>.</small>
                                 </div>
                                 <div>
