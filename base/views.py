@@ -213,8 +213,8 @@ def create_checkout_session(request, pk):
             ],
             mode='subscription',
             customer_email= email,
-            success_url='https://devifyuk.herokuapp.com/' + '?success=true&session_id={CHECKOUT_SESSION_ID}',
-            cancel_url='https://devifyuk.herokuapp.com/' + '?canceled=true',
+            success_url='https://www.devifyuk.com/' + '?success=true&session_id={CHECKOUT_SESSION_ID}',
+            cancel_url='https://www.devifyuk.com/' + '?canceled=true',
             automatic_tax={'enabled': True},
         )
 
@@ -231,7 +231,6 @@ def stripe_webhook(request):
   sig_header = request.META['HTTP_STRIPE_SIGNATURE']
   event = None
 
-  print(payload)
 
   try:
     event = stripe.Webhook.construct_event(
