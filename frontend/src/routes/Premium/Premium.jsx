@@ -141,7 +141,7 @@ function Premium() {
 
                                     {userInfo ?
 
-                                        <form action={`https://www.devifyuk.com/api/stripe/create-checkout-session/${userInfo.username}$price_1N1qyCHFK31xUDPSdJ0mqaUa`}method="POST">
+                                        <form action={`https://www.devifyuk.com/api/stripe/create-checkout-session/${userInfo.username}$price_1N1r5xHFK31xUDPS990cpORv`}method="POST">
                                             <button onClick={notifyClick} className='btn btn-info btn-md' type='submit'>Enroll now</button>
                                         </form>
 
