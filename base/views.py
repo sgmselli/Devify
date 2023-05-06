@@ -231,10 +231,13 @@ def stripe_webhook(request):
   sig_header = request.META['HTTP_STRIPE_SIGNATURE']
   event = None
 
+  print(payload)
+
   try:
     event = stripe.Webhook.construct_event(
       payload, sig_header, endpoint_secret
     )
+
   except ValueError as e:
     # Invalid payload
     return HttpResponse(status=400)
