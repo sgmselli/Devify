@@ -213,8 +213,8 @@ def create_checkout_session(request, pk):
             ],
             mode='subscription',
             customer_email= email,
-            success_url='http://127.0.0.1:8000/' + '?success=true&session_id={CHECKOUT_SESSION_ID}',
-            cancel_url='http://127.0.0.1:8000/' + '?canceled=true',
+            success_url='https://devifyuk.herokuapp.com/' + '?success=true&session_id={CHECKOUT_SESSION_ID}',
+            cancel_url='https://devifyuk.herokuapp.com/' + '?canceled=true',
             automatic_tax={'enabled': True},
         )
 
