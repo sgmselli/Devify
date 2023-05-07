@@ -446,12 +446,21 @@ button:hover b {
     justify-content: center;
 }
 
+.freelanceContainer {
+    margin:0 auto;
+    width:90%;
+}
+
 .freelanceIndex .row {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    gap:5rem;
+    gap:2rem;
+}
+
+.freelanceCol {
+    height:25rem;
 }
 
 .indexText {
@@ -562,9 +571,12 @@ textarea {
         max-width: 28rem;
     }
     
+    .freelanceCol {
+        margin:5rem auto;
+    }
+
     .freelanceIndex {
-        padding-top:8rem;
-        padding-bottom: 3rem;
+        padding-bottom:5rem;
     }
 
 }
