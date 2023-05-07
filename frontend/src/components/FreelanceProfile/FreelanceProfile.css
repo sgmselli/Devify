@@ -12,16 +12,17 @@
     flex-direction: column;
     flex-wrap: wrap;
     gap: 2rem;
-    height:25rem;
+    height:35rem;
 }
 
 .freelanceCard {
     background-color: #FFDEAD;
     border-radius: 12px;
     padding: 1.5rem;
-    width:20rem;
+    width:19rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     gap:1.1rem;
     color: white;
     cursor: pointer;
@@ -52,9 +53,7 @@
 .ticketsCarousel {
     display: flex;
     justify-content: start;
-    align-items: center;
     gap:2rem;
-    align-items: center;
     flex-direction: row;
 
 }
