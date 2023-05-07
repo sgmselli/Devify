@@ -407,6 +407,35 @@ function Landing() {
                     <div className='row freelanceContainer'>
 
                         <div className='col-lg freelanceCol'>
+                        <div className='middle'>
+                            <a href="#carouselExampleControls" role="button" data-slide="prev">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="20"
+                                        height="20"
+                                        fill="black"
+                                        class="bi bi-chevron-left"
+                                        viewBox="0 0 16 16">
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                                    </svg>
+                                </a>
+
+                                <a href="#carouselExampleControls" role="button" data-slide="next">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="20"
+                                        height="20"
+                                        fill="black"
+                                        class="bi bi-chevron-right"
+                                        viewBox="0 0 16 16">
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                    </svg>
+                                </a>
+                            </div>
                             <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
@@ -469,7 +498,9 @@ function Landing() {
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
+                            
                         </div>
 
                         <div className='col-lg indexText'>
