@@ -50,7 +50,6 @@ function FreelanceProfile() {
             //Send application of user's name with the freelance job to DB
             const handleClickApply = (e) => {
                 e.preventDefault()
-                console.log(premiums)
                 if (premiums.includes(userInfo.username)) {
                     dispatch(freelanceApply(id, {'application': userInfo.username}))
                     alert('Job application successful')
@@ -174,14 +173,10 @@ function FreelanceProfile() {
     useEffect(() => {
         dispatch(listFreelances());
         dispatch(getPremiumAccounts());
-    }, [dispatch, ])
-
-    useEffect(() => {
-        
         premiums = premiumAccounts.map((account) => account.user)
 
-    }, [premiumList])
-
+    }, [dispatch, ])
+    
     useEffect(() => {
 
         const availableId = document.getElementById('availableFreelance')
