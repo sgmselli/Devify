@@ -5,8 +5,8 @@ Database is currently not live!
 
 ## Tech stack
 Frontend in ReactJS,
-Backend in Python Django,
-Database as postgres hosted on AWS
+backend in Python Django,
+database as postgres hosted on AWS
 
 Django RestFramework is used to connect the frontend and backend, where Redux is used as a state management tool.
 Postman was used to test the api calls.
