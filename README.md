@@ -4,9 +4,9 @@ A web application to get aspiring software devs to build coding skills and land 
 Database is currently not live!
 
 ## Tech stack
-Frontend - ReactJS
-Backend - Python Django
-Database - postgres hosted on AWS
+Frontend in ReactJS,
+Backend in Python Django,
+Database as postgres hosted on AWS
 
 Django RestFramework is used to connect the frontend and backend, where Redux is used as a state management tool.
 Postman was used to test the api calls.
